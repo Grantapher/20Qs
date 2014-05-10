@@ -32,7 +32,8 @@ public class Main {
 			public void run() {
 				try {
 					@SuppressWarnings("unused")
-					questionTree tree = new questionTree("C:/Users/Grant/Documents/GitHub/20Qs/20Q/src/bigquestion.txt");
+					questionTree tree = new questionTree(
+							"C:/Users/Grant/Documents/GitHub/20Qs/20Q/src/bigquestion.txt");
 					StartGUI frame = new StartGUI();
 					frame.setVisible(true);
 				}

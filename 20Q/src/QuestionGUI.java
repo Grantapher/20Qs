@@ -16,9 +16,9 @@ import javax.swing.UIManager;
 
 @SuppressWarnings("serial")
 public class QuestionGUI extends JFrame {
-	private JPanel			contentPane;
-	private questionNode	current;
-	private JTextArea		questionTxt;
+	private JPanel				contentPane;
+	public static questionNode	current;
+	private JTextArea			questionTxt;
 	
 	/**
 	 * Create the frame.

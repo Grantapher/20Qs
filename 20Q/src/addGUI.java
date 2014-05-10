@@ -19,9 +19,11 @@ import java.awt.event.WindowEvent;
 
 @SuppressWarnings("serial")
 public class addGUI extends JFrame {
-	private JPanel		contentPane;
-	private JTextField	objectTxt;
-	private JTextField	questionTxt;
+	private JPanel				contentPane;
+	private static JTextField	objectTxt;
+	private static JTextField	questionTxt;
+	
+	public addGUI() {}
 	
 	/**
 	 * Create the frame.
@@ -71,7 +73,8 @@ public class addGUI extends JFrame {
 		openingLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		openingLbl.setBounds(10, 87, 338, 14);
 		panel.add(openingLbl);
-		final JLabel editLbl = new JLabel("an <above> and a " + lastData + "?");
+		final JLabel editLbl = new JLabel("an <above> and a " + lastData
+				+ "?");
 		editLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		editLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		editLbl.setBounds(10, 112, 338, 14);
@@ -111,7 +114,19 @@ public class addGUI extends JFrame {
 		JButton finishBtn = new JButton("Next");
 		finishBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
+				if(!(objectTxt.getText().length() > 0 && questionTxt
+						.getText().length() > 0))
+					return;
+				if(JOptionPane.showConfirmDialog(getContentPane(),
+						"If you answer yes to the question: \""
+								+ questionTxt.getText() + "\" does it lead to \""
+								+ objectTxt.getText() + "?\"", "Confirm",
+						JOptionPane.YES_NO_OPTION,
+						JOptionPane.QUESTION_MESSAGE) == JOptionPane.NO_OPTION)
+					return;
+				questionTree.add(objectTxt.getText(),
+						questionTxt.getText());
+				questionTree.write();
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
@@ -123,6 +138,7 @@ public class addGUI extends JFrame {
 						}
 					}
 				});
+				setVisible(false);
 			}
 		});
 		finishBtn.setBounds(269, 168, 89, 23);

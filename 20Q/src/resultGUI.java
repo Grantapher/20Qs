@@ -47,7 +47,7 @@ public class resultGUI extends JFrame {
 		titleLbl.setBounds(10, 11, 358, 14);
 		contentPane.add(titleLbl);
 		JLabel openingLbl = new JLabel(
-				"Is the object you are thinking of a");
+				"Is the object you are thinking of");
 		openingLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		openingLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		openingLbl.setBounds(10, 36, 358, 14);
