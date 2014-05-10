@@ -18,8 +18,10 @@ public class resultGUI extends JFrame {
 	
 	/**
 	 * Create the frame.
+	 * 
+	 * @param data
 	 */
-	public resultGUI() {
+	public resultGUI(final String data) {
 		setTitle("20 Questions");
 		addWindowListener(new WindowAdapter() {
 			@Override
@@ -50,7 +52,7 @@ public class resultGUI extends JFrame {
 		openingLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		openingLbl.setBounds(10, 36, 358, 14);
 		contentPane.add(openingLbl);
-		JLabel bigLbl = new JLabel("PIG?");
+		JLabel bigLbl = new JLabel(data);
 		bigLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		bigLbl.setFont(new Font("Tahoma", Font.PLAIN, 36));
 		bigLbl.setBounds(10, 61, 358, 44);
@@ -85,7 +87,7 @@ public class resultGUI extends JFrame {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							addPanel frame = new addPanel();
+							addGUI frame = new addGUI(data);
 							frame.setVisible(true);
 						}
 						catch(Exception e) {

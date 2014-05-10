@@ -18,7 +18,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 @SuppressWarnings("serial")
-public class addPanel extends JFrame {
+public class addGUI extends JFrame {
 	private JPanel		contentPane;
 	private JTextField	objectTxt;
 	private JTextField	questionTxt;
@@ -26,7 +26,7 @@ public class addPanel extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public addPanel() {
+	public addGUI(final String lastData) {
 		setTitle("20 Questions");
 		addWindowListener(new WindowAdapter() {
 			@Override
@@ -71,7 +71,7 @@ public class addPanel extends JFrame {
 		openingLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		openingLbl.setBounds(10, 87, 338, 14);
 		panel.add(openingLbl);
-		final JLabel editLbl = new JLabel("an <above> and a <lastObject>?");
+		final JLabel editLbl = new JLabel("an <above> and a " + lastData + "?");
 		editLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		editLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		editLbl.setBounds(10, 112, 338, 14);
@@ -85,7 +85,7 @@ public class addPanel extends JFrame {
 				if(!temp.isEmpty())
 					first = temp.charAt(0);
 				editLbl.setText("a" + (vowelCheck(first) ? "n " : " ")
-						+ temp + " and a <lastObject>?");
+						+ temp + " and a " + lastData + "?");
 			}
 		});
 		objectTxt.addKeyListener(new KeyAdapter() {
@@ -96,7 +96,7 @@ public class addPanel extends JFrame {
 				if(!temp.isEmpty())
 					first = temp.charAt(0);
 				editLbl.setText("a" + (vowelCheck(first) ? "n " : " ")
-						+ temp + " and a <lastObject>?");
+						+ temp + " and a " + lastData + "?");
 			}
 		});
 		objectTxt.setHorizontalAlignment(SwingConstants.CENTER);

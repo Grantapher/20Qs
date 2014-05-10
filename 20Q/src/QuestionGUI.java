@@ -1,6 +1,7 @@
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.EventQueue;
@@ -11,15 +12,19 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.swing.UIManager;
 
 @SuppressWarnings("serial")
 public class QuestionGUI extends JFrame {
-	private JPanel	contentPane;
+	private JPanel			contentPane;
+	private questionNode	current;
+	private JTextArea		questionTxt;
 	
 	/**
 	 * Create the frame.
 	 */
 	public QuestionGUI() {
+		current = questionTree.head;
 		setTitle("20 Questions");
 		addWindowListener(new WindowAdapter() {
 			@Override
@@ -44,39 +49,49 @@ public class QuestionGUI extends JFrame {
 		titleLbl.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		titleLbl.setBounds(10, 11, 358, 14);
 		contentPane.add(titleLbl);
-		JLabel questionLbl = new JLabel("Is it an animal?");
-		questionLbl.setHorizontalAlignment(SwingConstants.CENTER);
-		questionLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		questionLbl.setBounds(10, 36, 358, 14);
-		contentPane.add(questionLbl);
+		questionTxt = new JTextArea();
+		questionTxt.setWrapStyleWord(true);
+		questionTxt.setLineWrap(true);
+		questionTxt.setRows(2);
+		questionTxt.setText("What is it?");
+		questionTxt.setBorder(null);
+		questionTxt.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		questionTxt.setEditable(false);
+		questionTxt.setBackground(UIManager.getColor("Label.background"));
+		questionTxt.setBounds(20, 36, 348, 110);
+		contentPane.add(questionTxt);
+		questionTxt.setColumns(10);
+		if(current.isQuestion())
+			questionTxt.setText(current.data);
+		else
+			moveOn(current.data);
 		JPanel panel = new JPanel();
-		panel.setBounds(10, 61, 358, 191);
+		panel.setBounds(10, 157, 358, 95);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		JButton yesBtn = new JButton("Yes");
 		yesBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {}
+			public void actionPerformed(ActionEvent e) {
+				current = current.yes;
+				if(current.isQuestion())
+					questionTxt.setText(current.data);
+				else
+					moveOn(current.data);
+			}
 		});
-		yesBtn.setBounds(85, 78, 89, 23);
+		yesBtn.setBounds(85, 36, 89, 23);
 		panel.add(yesBtn);
 		JButton noBtn = new JButton("No");
 		noBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							resultGUI frame = new resultGUI();
-							frame.setVisible(true);
-						}
-						catch(Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				current = current.no;
+				if(current.isQuestion())
+					questionTxt.setText(current.data);
+				else
+					moveOn(current.data);
 			}
 		});
-		noBtn.setBounds(184, 78, 89, 23);
+		noBtn.setBounds(184, 36, 89, 23);
 		panel.add(noBtn);
 		JButton exitBtn = new JButton("Exit");
 		exitBtn.addActionListener(new ActionListener() {
@@ -90,5 +105,20 @@ public class QuestionGUI extends JFrame {
 		});
 		exitBtn.setBounds(269, 168, 89, 23);
 		panel.add(exitBtn);
+	}
+	
+	void moveOn(final String data) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					setVisible(false);
+					resultGUI frame = new resultGUI(data);
+					frame.setVisible(true);
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 }

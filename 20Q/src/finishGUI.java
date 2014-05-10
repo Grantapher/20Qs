@@ -45,7 +45,7 @@ public class finishGUI extends JFrame {
 		titleLbl.setBounds(10, 11, 358, 14);
 		contentPane.add(titleLbl);
 		JLabel openingLbl = new JLabel(correct ? "WOOHOO! I got it!"
-				: "Thank you!");
+				: "Thank you! I'll try harder next time!");
 		openingLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		openingLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		openingLbl.setBounds(10, 36, 358, 14);
