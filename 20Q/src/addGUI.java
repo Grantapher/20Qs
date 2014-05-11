@@ -23,8 +23,6 @@ public class addGUI extends JFrame {
 	private static JTextField	objectTxt;
 	private static JTextField	questionTxt;
 	
-	public addGUI() {}
-	
 	/**
 	 * Create the frame.
 	 */
@@ -115,11 +113,34 @@ public class addGUI extends JFrame {
 		finishBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(!(objectTxt.getText().length() > 0 && questionTxt
-						.getText().length() > 0))
+						.getText().length() > 0)) {
+					if(JOptionPane
+							.showConfirmDialog(
+									getContentPane(),
+									"You have left a field or two blank, do you not want to add anything to the game?",
+									"Confirm", JOptionPane.YES_NO_OPTION,
+									JOptionPane.QUESTION_MESSAGE) == JOptionPane.NO_OPTION)
+						return;
+					else
+						EventQueue.invokeLater(new Runnable() {
+							public void run() {
+								try {
+									finishGUI frame = new finishGUI(false);
+									frame.setVisible(true);
+								}
+								catch(Exception e) {
+									e.printStackTrace();
+								}
+							}
+						});
+					setVisible(false);
 					return;
-				if(JOptionPane.showConfirmDialog(getContentPane(),
+				}
+				if(JOptionPane.showConfirmDialog(
+						getContentPane(),
 						"If you answer yes to the question: \""
-								+ questionTxt.getText() + "\" does it lead to \""
+								+ questionTxt.getText()
+								+ "\" does it lead to \""
 								+ objectTxt.getText() + "?\"", "Confirm",
 						JOptionPane.YES_NO_OPTION,
 						JOptionPane.QUESTION_MESSAGE) == JOptionPane.NO_OPTION)
