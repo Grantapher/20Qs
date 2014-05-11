@@ -4,15 +4,11 @@ public class questionNode {
 	public String		data;
 	public questionNode	yes;
 	public questionNode	no;
+	public questionNode	undo;
 	
-	questionNode(String data) {
-		this(data, null, null);
-	}
-	
-	questionNode(String data, questionNode yes, questionNode no) {
+	questionNode(String data, questionNode undo) {
 		this.data = data;
-		this.yes = yes;
-		this.no = no;
+		this.undo = undo;
 	}
 	
 	public boolean isQuestion() {

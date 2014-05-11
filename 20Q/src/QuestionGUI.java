@@ -23,15 +23,15 @@ public class QuestionGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public QuestionGUI() {
-		current = questionTree.head;
+	public QuestionGUI(questionNode currentIn) {
+		current = currentIn;
 		setTitle("20 Questions");
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
 				if(JOptionPane.showConfirmDialog(getContentPane(),
 						"Are you sure you want to exit?", "Exit",
-						JOptionPane.YES_NO_OPTION,
+						JOptionPane.YES_NO_CANCEL_OPTION,
 						JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION)
 					System.exit(0);
 			}
@@ -64,7 +64,7 @@ public class QuestionGUI extends JFrame {
 		if(current.isQuestion())
 			questionTxt.setText(current.data);
 		else
-			moveOn(current.data);
+			moveOn();
 		JPanel panel = new JPanel();
 		panel.setBounds(10, 157, 358, 95);
 		contentPane.add(panel);
@@ -76,10 +76,10 @@ public class QuestionGUI extends JFrame {
 				if(current.isQuestion())
 					questionTxt.setText(current.data);
 				else
-					moveOn(current.data);
+					moveOn();
 			}
 		});
-		yesBtn.setBounds(85, 36, 89, 23);
+		yesBtn.setBounds(85, 19, 89, 23);
 		panel.add(yesBtn);
 		JButton noBtn = new JButton("No");
 		noBtn.addActionListener(new ActionListener() {
@@ -88,31 +88,42 @@ public class QuestionGUI extends JFrame {
 				if(current.isQuestion())
 					questionTxt.setText(current.data);
 				else
-					moveOn(current.data);
+					moveOn();
 			}
 		});
-		noBtn.setBounds(184, 36, 89, 23);
+		noBtn.setBounds(184, 19, 89, 23);
 		panel.add(noBtn);
 		JButton exitBtn = new JButton("Exit");
 		exitBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(JOptionPane.showConfirmDialog(getContentPane(),
 						"Are you sure you want to exit?", "Exit",
-						JOptionPane.YES_NO_OPTION,
+						JOptionPane.YES_NO_CANCEL_OPTION,
 						JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION)
 					System.exit(0);
 			}
 		});
 		exitBtn.setBounds(269, 168, 89, 23);
 		panel.add(exitBtn);
+		JButton undoButton = new JButton("Undo");
+		undoButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(current.undo == null)
+					return;
+				current = current.undo;
+				questionTxt.setText(current.data);
+			}
+		});
+		undoButton.setBounds(135, 53, 89, 23);
+		panel.add(undoButton);
 	}
 	
-	void moveOn(final String data) {
+	void moveOn() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					setVisible(false);
-					resultGUI frame = new resultGUI(data);
+					resultGUI frame = new resultGUI(current);
 					frame.setVisible(true);
 				}
 				catch(Exception e) {

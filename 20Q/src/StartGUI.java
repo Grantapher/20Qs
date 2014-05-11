@@ -53,7 +53,7 @@ public class StartGUI extends JFrame {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							QuestionGUI frame = new QuestionGUI();
+							QuestionGUI frame = new QuestionGUI(questionTree.head);
 							frame.setVisible(true);
 						}
 						catch(Exception e) {

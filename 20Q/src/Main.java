@@ -33,7 +33,7 @@ public class Main {
 				try {
 					@SuppressWarnings("unused")
 					questionTree tree = new questionTree(
-							"C:/Users/Grant/Documents/GitHub/20Qs/20Q/src/bigquestion.txt");
+							"C:/Users/Grant/Documents/GitHub/20Qs/20Q/src/question.txt");
 					StartGUI frame = new StartGUI();
 					frame.setVisible(true);
 				}

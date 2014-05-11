@@ -26,7 +26,7 @@ public class finishGUI extends JFrame {
 			public void windowClosing(WindowEvent e) {
 				if(JOptionPane.showConfirmDialog(getContentPane(),
 						"Are you sure you want to exit?", "Exit",
-						JOptionPane.YES_NO_OPTION,
+						JOptionPane.YES_NO_CANCEL_OPTION,
 						JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION)
 					System.exit(0);
 			}

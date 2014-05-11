@@ -19,16 +19,16 @@ public class resultGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 * 
-	 * @param data
+	 * @param current
 	 */
-	public resultGUI(final String data) {
+	public resultGUI(final questionNode current) {
 		setTitle("20 Questions");
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
 				if(JOptionPane.showConfirmDialog(getContentPane(),
 						"Are you sure you want to exit?", "Exit",
-						JOptionPane.YES_NO_OPTION,
+						JOptionPane.YES_NO_CANCEL_OPTION,
 						JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION)
 					System.exit(0);
 			}
@@ -52,13 +52,13 @@ public class resultGUI extends JFrame {
 		openingLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		openingLbl.setBounds(10, 36, 358, 14);
 		contentPane.add(openingLbl);
-		JLabel bigLbl = new JLabel(data);
+		JLabel bigLbl = new JLabel(current.data);
 		bigLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		bigLbl.setFont(new Font("Tahoma", Font.PLAIN, 36));
 		bigLbl.setBounds(10, 61, 358, 44);
 		contentPane.add(bigLbl);
 		JPanel panel = new JPanel();
-		panel.setBounds(10, 116, 358, 136);
+		panel.setBounds(10, 157, 358, 95);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		JButton yesBtn = new JButton("Yes");
@@ -78,7 +78,7 @@ public class resultGUI extends JFrame {
 				});
 			}
 		});
-		yesBtn.setBounds(85, 56, 89, 23);
+		yesBtn.setBounds(85, 19, 89, 23);
 		panel.add(yesBtn);
 		JButton noBtn = new JButton("No");
 		noBtn.addActionListener(new ActionListener() {
@@ -87,7 +87,7 @@ public class resultGUI extends JFrame {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							addGUI frame = new addGUI(data);
+							addGUI frame = new addGUI(current.data);
 							frame.setVisible(true);
 						}
 						catch(Exception e) {
@@ -97,7 +97,28 @@ public class resultGUI extends JFrame {
 				});
 			}
 		});
-		noBtn.setBounds(184, 56, 89, 23);
+		noBtn.setBounds(184, 19, 89, 23);
 		panel.add(noBtn);
+		
+		JButton undoBtn = new JButton("Undo");
+		undoBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							QuestionGUI frame = new QuestionGUI(current.undo);
+							frame.setVisible(true);
+						}
+						catch(Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			
+			}
+		});
+		undoBtn.setBounds(135, 53, 89, 23);
+		panel.add(undoBtn);
 	}
 }

@@ -10,5 +10,29 @@ A:
 Candy
 A:
 Food
+Q:
+Is it an animal?
+Q:
+Does it bark?
+A:
+Dog
+Q:
+Does it meow?
+A:
+Cat
+Q:
+Does it eat salmon?
+A:
+Bear
+A:
+Pig
+Q:
+Does grant climb on it?
+Q:
+Is it a plant?
+A:
+Tree
 A:
 Rock
+A:
+Water

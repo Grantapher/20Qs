@@ -251,7 +251,7 @@ Does it sometimes stand on one leg?
 A:
 Flamingo
 Q:
-Does it change form  times?
+Does it change form times?
 A:
 Eevee
 A:
@@ -449,7 +449,7 @@ Canada Goose
 Q:
 Does it quack?
 Q:
-It has up to   ducklings?
+It has up to ducklings?
 Q:
 Does it have green?
 A:
@@ -765,7 +765,7 @@ Is it grey and white?
 A:
 Seagul
 Q:
-Does it have  legs?
+Does it have legs?
 A:
 Horse
 A:
@@ -1046,8 +1046,12 @@ Q:
 Can it fly?
 A:
 Emu
+Q:
+Does it bark?
 A:
 Dog
+A:
+Cat
 Q:
 Is it pink?
 Q:
@@ -1061,7 +1065,7 @@ Monster
 A:
 Flamingo
 Q:
-Does it weigh more than  pounds?
+Does it weigh more than pounds?
 Q:
 Does it have really big feet?
 A:
@@ -1209,7 +1213,7 @@ Does it fly close to the water?
 Q:
 Can it catch fish?
 Q:
-Does it have gray  white feathers?
+Does it have gray white feathers?
 Q:
 Is it a large bird of prey?
 Q:
@@ -1257,7 +1261,7 @@ Are its feathers colored blue and gold?
 A:
 Blue And Gold Macaw
 Q:
-Can it fly  miles in a single trip?
+Can it fly miles in a single trip?
 A:
 Albatross
 Q:
@@ -1599,7 +1603,7 @@ Parrot
 Q:
 It has more colors?
 Q:
-Is it a mytological bird that catches itself on fire every  years just to be reborn  days later?
+Is it a mytological bird that catches itself on fire every years just to be reborn days later?
 A:
 Phoenix
 A:
@@ -1653,7 +1657,7 @@ Eagle
 Q:
 Does its name begin with a p?
 Q:
-Is it a small bird that grows to be about  inches tall?
+Is it a small bird that grows to be about inches tall?
 Q:
 Is it colorful?
 A:
@@ -1687,7 +1691,7 @@ Is it red and grey?
 Q:
 Is it a small multicolored bird?
 Q:
-Is it  letters long?
+Is it letters long?
 A:
 Parrot
 A:
@@ -1759,7 +1763,7 @@ Parakeet
 A:
 Blue And Gold Macaw
 Q:
-Is it green  gray?
+Is it green gray?
 Q:
 Is it in the budgie family?
 A:
@@ -1809,7 +1813,7 @@ Parrokeet
 A:
 Budgie
 Q:
-Is it about  inches in total length?
+Is it about inches in total length?
 A:
 Sun Conure
 A:
@@ -2361,7 +2365,7 @@ Can it be dangerous?
 Q:
 Does it have goldenybrown feathers?
 Q:
-Can it reach speeds of  less than  mph during dives?
+Can it reach speeds of less than mph during dives?
 A:
 Peregrine Falcon
 A:
@@ -2703,7 +2707,7 @@ Is it a diasaur?
 A:
 Pterodacctyl
 Q:
-Has it got a wingspan of over  feet?
+Has it got a wingspan of over feet?
 A:
 Argentavis
 A:
@@ -3037,7 +3041,7 @@ Fishing Eagle
 A:
 Harpy Eagle
 Q:
-Can it swoop at  mph?
+Can it swoop at mph?
 Q:
 Is its nickname a sea hawk?
 A:
@@ -3605,7 +3609,7 @@ Phoenix
 Q:
 Does it have a sharp beak?
 Q:
-Does it live for  years dies and is reborn in a nest of fire to live for another  years?
+Does it live for years dies and is reborn in a nest of fire to live for another years?
 A:
 Phoenix
 Q:
@@ -4287,7 +4291,7 @@ Does the male have a blue breast?
 A:
 Blue Wren
 Q:
-Does it cluck  lay eggs?
+Does it cluck lay eggs?
 A:
 Chicken
 Q:
@@ -5043,7 +5047,7 @@ Hooh
 A:
 Dragon
 Q:
-Is it  man and  horse?
+Is it man and horse?
 A:
 Centaur
 Q:
@@ -5185,7 +5189,7 @@ Dog
 Q:
 Does it sometimes live in the mountains?
 Q:
-Does it have  limbs?
+Does it have limbs?
 A:
 Gorfilgan
 A:
@@ -5285,7 +5289,7 @@ Is it an early pterosaur?
 A:
 Petinosaurus
 Q:
-Is it a dragon with a  foot wingspan?
+Is it a dragon with a foot wingspan?
 A:
 Prehistoric Dragon
 A:
@@ -5388,6 +5392,10 @@ A:
 Yes And No Button
 A:
 Dogfairy
+Q:
+Is it not a fairy?
+A:
+Normal Dragon
 A:
 Fairydragon
 Q:
@@ -5585,7 +5593,7 @@ Is it red with black spots?
 Q:
 Ladybug?
 Q:
-Is it more than  colours?
+Is it more than colours?
 A:
 Labybird
 A:
@@ -5763,7 +5771,7 @@ Ape
 A:
 Fumpy
 Q:
-Does it walk on  legs?
+Does it walk on legs?
 A:
 Hippo
 Q:
@@ -6645,11 +6653,11 @@ Ladybug
 Q:
 Does it have antennaes?
 Q:
-Does it have  wings?
+Does it have wings?
 Q:
 Does it hunt animals?
 Q:
-Does it fly  at mph and catch insects in the air?
+Does it fly at mph and catch insects in the air?
 A:
 Dragonfly
 Q:
@@ -7111,7 +7119,7 @@ Does it live in the grass?
 A:
 Grasshopper
 Q:
-Does it have more then  wings?
+Does it have more then wings?
 A:
 Dragonfly
 Q:
@@ -7291,7 +7299,7 @@ Mosquito
 A:
 Tetse Fly
 Q:
-Does it look like a grass hopper  giant fly?
+Does it look like a grass hopper giant fly?
 A:
 Cycada
 A:
@@ -7745,7 +7753,7 @@ Housefly
 Q:
 Is it located near fruit?
 Q:
-Does it have  wings?
+Does it have wings?
 A:
 Dragonfly
 Q:
@@ -7831,7 +7839,7 @@ Does it suck sap from plant?
 A:
 Aphid
 Q:
-Does it have  legs?
+Does it have legs?
 A:
 Fly
 Q:
@@ -7839,7 +7847,7 @@ Is it parasitic?
 A:
 Botfly
 Q:
-Does it sometimes live as an adult for only  hours?
+Does it sometimes live as an adult for only hours?
 A:
 Mayfly
 A:
@@ -8113,7 +8121,7 @@ Does it live for only one day as an adult?
 Q:
 Does it fly above ponds and lakes?
 Q:
-Does it sometimes only live for  hours as an adult?
+Does it sometimes only live for hours as an adult?
 A:
 Mayfly
 A:
@@ -8152,6 +8160,10 @@ Q:
 Does it climb in trees?
 A:
 Jaguar
+Q:
+Is it a sphere?
+A:
+Baseball
 A:
 Dragonfly
 Q:
@@ -8179,7 +8191,7 @@ Cheeta
 Q:
 Does it live only on madagascar?
 A:
-Ring  Tailed Lemur
+Ring Tailed Lemur
 A:
 Bush Baby
 Q:
@@ -8273,7 +8285,7 @@ Squarel
 Q:
 Is it hairless?
 Q:
-Does it have more than  legs?
+Does it have more than legs?
 A:
 Fire Ant
 A:
@@ -8419,7 +8431,7 @@ Gecko
 Q:
 Does it eat nuts?
 Q:
-Does it live in bushes  trees?
+Does it live in bushes trees?
 Q:
 Is it a type of squirlle?
 Q:
@@ -8499,7 +8511,7 @@ Is it a mammal?
 Q:
 Is it a cawal?
 Q:
-Does it have  legs?
+Does it have legs?
 A:
 Teranchala
 Q:
@@ -8857,7 +8869,7 @@ Raccoon
 Q:
 Is it is smaller than a squirrel?
 Q:
-Does it have a very small beard  live in the rainforest?
+Does it have a very small beard live in the rainforest?
 Q:
 Does it have patches around its eyes?
 A:
@@ -8933,7 +8945,7 @@ Does it have a bushy tail?
 A:
 Squirrel
 A:
-Rat  Mouse
+Rat Mouse
 Q:
 Its a toad?
 A:
@@ -9039,7 +9051,7 @@ Rock
 A:
 Frogs
 Q:
-Does it grow to be only about  inches longand can it change colors from green to brown only?
+Does it grow to be only about inches longand can it change colors from green to brown only?
 Q:
 Does it have a semicurly tail?
 A:
@@ -9081,7 +9093,7 @@ Does it have a fin on its back?
 A:
 Basilisk Lizardjesus Christ Lizard
 Q:
-Can it hold its breath for over  minutes underwater?
+Can it hold its breath for over minutes underwater?
 A:
 Water Dragon
 Q:
@@ -9253,7 +9265,7 @@ Is it poisonous?
 A:
 Poison Dart Frog
 Q:
-Does your animal have more than  legs?
+Does your animal have more than legs?
 A:
 Centipede
 Q:
@@ -9483,7 +9495,7 @@ Does its name rhyme with house?
 A:
 Mouse
 Q:
-Does it have  legs?
+Does it have legs?
 A:
 Tarantula
 A:
@@ -9583,7 +9595,7 @@ Lemur
 Q:
 Is it diurnal?
 Q:
-Does it use a long middlefinger to stab  eat termites?
+Does it use a long middlefinger to stab eat termites?
 Q:
 Does it have a long tail and swing from tree to tree?
 A:
@@ -9741,7 +9753,7 @@ Godinotia
 A:
 Chimpanzee
 Q:
-Does it have more than  legs?
+Does it have more than legs?
 Q:
 Does it live under ground in tunnels?
 Q:
@@ -10119,7 +10131,7 @@ Water Bear
 A:
 Tree Frog
 Q:
-Is it less than  inches tall?
+Is it less than inches tall?
 Q:
 Is it singlecelled?
 Q:
@@ -10427,7 +10439,7 @@ Is it the state animal of south dakota?
 A:
 Coyote
 Q:
-Is there a beanie baby of it called  tuffy?
+Is there a beanie baby of it called tuffy?
 Q:
 Is it a small dog?
 A:
@@ -10559,7 +10571,7 @@ West Highland Terrier
 Q:
 Does it originate in china?
 Q:
-Does it weigh around  pounds?
+Does it weigh around pounds?
 Q:
 Does it have a short snout?
 A:
@@ -10665,7 +10677,7 @@ Is it a small herding dog that looks like a miniature collie?
 A:
 Shetland Sheepdog
 Q:
-Is it normally  lbs or less?
+Is it normally lbs or less?
 Q:
 Does its name mean french for butterfly?
 A:
@@ -10711,7 +10723,7 @@ Pomeranian
 A:
 Pomeranian
 Q:
-Is it tan black brown  white?
+Is it tan black brown white?
 Q:
 Can it be a herding dog?
 A:
@@ -11237,7 +11249,7 @@ Shiba Inu
 A:
 Terrier Dog
 Q:
-Does it have  different colored eyes?
+Does it have different colored eyes?
 A:
 Sheltie
 Q:
@@ -11433,7 +11445,7 @@ Is it fat?
 Q:
 Short legs?
 Q:
-Is it on the taco  bell commercial?
+Is it on the taco bell commercial?
 A:
 Chihauhau
 Q:
@@ -11459,7 +11471,7 @@ Does it like to dig especially for rocks?
 A:
 Cairn Terrier
 Q:
-Does it avrage between  and  inches in leangh?
+Does it avrage between and inches in leangh?
 A:
 Chuawawa
 A:
@@ -14709,7 +14721,7 @@ Does it have a round shell on its back?
 A:
 Beetle
 Q:
-Does it have more then  legs?
+Does it have more then legs?
 A:
 Millipeed
 Q:
@@ -14993,7 +15005,7 @@ Starfish
 Q:
 Does it have feathers?
 Q:
-Is it over  feet tall?
+Is it over feet tall?
 A:
 Emu
 Q:
@@ -15203,7 +15215,7 @@ Is it a common pet?
 Q:
 Does it have fur?
 Q:
-Does it have more than  legs?
+Does it have more than legs?
 A:
 Tarantula
 Q:
@@ -15371,7 +15383,7 @@ Is it a reptile can it spread out its collared neck?
 A:
 Frilled Lizard
 Q:
-Does your animal lay more than  eggs?
+Does your animal lay more than eggs?
 A:
 Red Crab
 A:
@@ -15443,7 +15455,7 @@ Is it a rodent that lives in your house?
 Q:
 Does it have long ears?
 Q:
-Dose it have  legs?
+Dose it have legs?
 A:
 Mouse
 A:
@@ -15619,7 +15631,7 @@ Chicken
 A:
 Guinea Pig
 Q:
-Are there at least  ways to cook it?
+Are there at least ways to cook it?
 Q:
 Does it have gills?
 Q:
@@ -15641,7 +15653,7 @@ Chicken
 Q:
 Does it live in water?
 Q:
-Does it have  big pinchers?
+Does it have big pinchers?
 A:
 Crab
 A:
@@ -15979,7 +15991,7 @@ Spink
 A:
 Tick
 Q:
-Does it have more than  legsor is it smaller than a can of soda does it eat leaves?
+Does it have more than legsor is it smaller than a can of soda does it eat leaves?
 Q:
 Does it dig a burrow and eat ants?
 A:
@@ -15989,7 +16001,7 @@ Is it black?
 A:
 Ant
 Q:
-Does it have  legs?
+Does it have legs?
 A:
 Gopher
 Q:
@@ -16167,7 +16179,7 @@ Does it make cobweb?
 Q:
 Is it poisonous to small animals but not humans?
 Q:
-Does it have more than  legs?
+Does it have more than legs?
 A:
 Spider
 Q:
@@ -16211,7 +16223,7 @@ Red Roman
 A:
 Tarantula
 Q:
-Does it have more than  legs?
+Does it have more than legs?
 Q:
 Is it a tick?
 A:
@@ -16225,7 +16237,7 @@ Does it have a stinger on the back of its tail?
 A:
 Scorpion
 Q:
-Does it have  legs?
+Does it have legs?
 Q:
 Does it suck mammels blood?
 Q:
@@ -16247,7 +16259,7 @@ Can it go into a form that resembles a sort of ball shape?
 A:
 Rollie Pollie
 Q:
-Does it have  legs and is black with red markings?
+Does it have legs and is black with red markings?
 A:
 Black Widow Spider
 A:
@@ -16261,7 +16273,7 @@ Can it curl up into a ball?
 A:
 Pillbug
 Q:
-Is it black  white in colour?
+Is it black white in colour?
 A:
 Badger
 A:
@@ -16299,7 +16311,7 @@ Is it an aquatic animal?
 Q:
 Does it have a shell?
 Q:
-Has it been extinct for more than  million years?
+Has it been extinct for more than million years?
 A:
 Opabinia
 A:
@@ -16431,7 +16443,7 @@ Sea Urchin
 Q:
 Is it mobile?
 Q:
-Does it have  arms?
+Does it have arms?
 A:
 Sea Star
 A:
@@ -16587,7 +16599,7 @@ Badger
 Q:
 Does it have a shell?
 Q:
-Does it have  legs?
+Does it have legs?
 A:
 Crab
 Q:
@@ -16651,7 +16663,7 @@ Sponge Bob Squre Pants
 A:
 Otter
 Q:
-Is it between  and  pounds?
+Is it between and pounds?
 Q:
 Is your animal associated with any holidays?
 Q:
@@ -17245,7 +17257,7 @@ Betta
 Q:
 Is it a yellowish color?
 Q:
-Does this animal get bigger than  inch long?
+Does this animal get bigger than inch long?
 Q:
 Is it an angelfish?
 A:
@@ -17261,7 +17273,7 @@ Yellow Congo Tetra
 Q:
 Is it a gold color?
 Q:
-Does it get bigger than  inch long?
+Does it get bigger than inch long?
 Q:
 Does it live in a lake?
 A:
@@ -17275,7 +17287,7 @@ Is its stomach shaped like a hatchet?
 A:
 Hatchetfish
 Q:
-Does this animal get longer than   inches long?
+Does this animal get longer than inches long?
 Q:
 Is it skinny?
 Q:
@@ -17407,7 +17419,7 @@ Leech
 Q:
 Does it live in the ocean?
 Q:
-Does it have  legs?
+Does it have legs?
 Q:
 Does your animal have blue rings?
 A:
@@ -17749,7 +17761,7 @@ Does it have fins?
 Q:
 Does it live in creeks and streams ?
 Q:
-Can it live in all types of water  freshwater brackish and saltwater?
+Can it live in all types of water freshwater brackish and saltwater?
 Q:
 Does it glide?
 A:
@@ -17977,7 +17989,7 @@ Nautilus
 Q:
 Does it have legs?
 Q:
-Does it carry weight up to  times heavier than its own weight?
+Does it carry weight up to times heavier than its own weight?
 Q:
 Is this animal a pokemon?
 A:
@@ -17991,7 +18003,7 @@ Platapus
 Q:
 Does it have claws?
 Q:
-Does the female of the speices lay and whatch more than  eggs?
+Does the female of the speices lay and whatch more than eggs?
 A:
 Red Crab
 A:
@@ -18461,7 +18473,7 @@ Black Mamba
 A:
 Tarantula
 Q:
-Is it blue  white?
+Is it blue white?
 A:
 Dodo Bird
 Q:
@@ -18521,7 +18533,7 @@ Raptor
 Q:
 Is it a snake?
 Q:
-Does it weigh less than  pounds?
+Does it weigh less than pounds?
 Q:
 Does it eat mice?
 A:
@@ -18595,7 +18607,7 @@ Sponge
 A:
 Sea Anemone
 Q:
-Does it have  legs?
+Does it have legs?
 Q:
 Is the animal that you are thinking of larger than the average spider?
 A:
@@ -18695,7 +18707,7 @@ Does it live in or on another animal for food?
 Q:
 Is it endangered?
 Q:
-Is it a small  eyed creature that lives on your hand?
+Is it a small eyed creature that lives on your hand?
 A:
 Ooglo
 A:
@@ -19017,7 +19029,7 @@ Meerkat
 Q:
 Is it an animal normally associated with england?
 Q:
-Does it have orange  white spots?
+Does it have orange white spots?
 A:
 Teddy Bear Hamster
 A:
@@ -19117,7 +19129,7 @@ Does it shed its skin?
 A:
 Rattlesnake
 Q:
-Does it have more than  pairs of legs?
+Does it have more than pairs of legs?
 A:
 Centipede
 Q:
@@ -19277,7 +19289,7 @@ Pooh Bear
 A:
 Malayan Sun Bear
 Q:
-Does it have  sets of legs?
+Does it have sets of legs?
 A:
 Crab
 Q:
@@ -19511,7 +19523,7 @@ Skunk
 Q:
 Does it have black and brown stripes in its back?
 Q:
-Does it have more than  sets of legs?
+Does it have more than sets of legs?
 Q:
 Does it have more than ninetynine pairs of legs?
 A:
@@ -19639,7 +19651,7 @@ Guinea Pig
 A:
 Hamster
 Q:
-Does it have  bodyparts?
+Does it have bodyparts?
 A:
 Ant
 Q:
@@ -20245,7 +20257,7 @@ Egg
 A:
 Clam
 Q:
-Does it have  foot and leaves a slimey track behind it?
+Does it have foot and leaves a slimey track behind it?
 Q:
 Does it live on rocks on the shore line?
 A:
@@ -20325,13 +20337,13 @@ Fluke
 Q:
 Is it slimy?
 Q:
-Does it have  toes on each foot?
+Does it have toes on each foot?
 A:
 Salamander
 A:
 Slug
 Q:
-Does it have more than  legs?
+Does it have more than legs?
 A:
 Millipede
 Q:
@@ -20613,7 +20625,7 @@ Does it have wool?
 Q:
 Does it dislike sid?
 A:
-Manny The Mammoth 
+Manny The Mammoth
 A:
 Wooly Mammoth
 Q:
@@ -20631,7 +20643,7 @@ Does it have legs?
 Q:
 Does it speak a language?
 Q:
-Does it have  legs?
+Does it have legs?
 Q:
 Is it a brown woolly fantasy animal you can find on sesame street?
 A:
@@ -20645,7 +20657,7 @@ Is it older than a elephant?
 A:
 Mammoth
 Q:
-Does it have  legs and  arms?
+Does it have legs and arms?
 A:
 Human
 A:
@@ -20671,7 +20683,7 @@ Elephant
 A:
 African Elephant
 Q:
-Does it have big ears  live in asia?
+Does it have big ears live in asia?
 A:
 Asian Elephant
 Q:
@@ -20859,7 +20871,7 @@ Does it have fire for a mane?
 A:
 Rapidash
 Q:
-Is your animal a horse and the name of a baseball league  starting with a p ?
+Is your animal a horse and the name of a baseball league starting with a p ?
 Q:
 Does it have a blonde body?
 A:
@@ -21057,7 +21069,7 @@ Clydesdale
 A:
 Quarter Horse
 Q:
-Does it sit at the computer all day making a stupid internet something try and guess what animal they are thinking of and  of the time getting it wrong?
+Does it sit at the computer all day making a stupid internet something try and guess what animal they are thinking of and of the time getting it wrong?
 A:
 Human
 A:
@@ -21877,7 +21889,7 @@ Is it a mix of two animals?
 A:
 Liger
 Q:
-Does it have  heads?
+Does it have heads?
 A:
 Cerbrasas
 A:
@@ -22797,7 +22809,7 @@ Walrus
 A:
 Dolphin
 Q:
-Is it more than  foot tall?
+Is it more than foot tall?
 Q:
 Does it have more then one horn?
 A:
@@ -22993,7 +23005,7 @@ Can it climb walls?
 A:
 Spiderman
 Q:
-Does it have  legs?
+Does it have legs?
 A:
 Dog
 A:
@@ -23061,7 +23073,7 @@ Dose it bite?
 Q:
 Does it have a dorsal fin?
 A:
-Orca  Killer Whale
+Orca Killer Whale
 A:
 Crocodile
 Q:
@@ -23089,7 +23101,7 @@ Impala
 A:
 Camargue Horse
 Q:
-Is this horse used  ranches?
+Is this horse used ranches?
 A:
 Quarter Horse
 A:
@@ -23369,7 +23381,7 @@ Galapagos Turtle
 Q:
 Does it eat microscopic creatures?
 Q:
-What animal likes to fly out of the water  back in?
+What animal likes to fly out of the water back in?
 A:
 Dolphin
 Q:
@@ -23769,7 +23781,7 @@ Does it live in south america?
 Q:
 Is it black and white?
 Q:
-Does it have a  mask  on its face?
+Does it have a mask on its face?
 Q:
 Is it sometimes white and black?
 A:
@@ -23999,7 +24011,7 @@ Does your animal have spots?
 Q:
 Does it have five claws?
 Q:
-Can it run up to  miles an hour?
+Can it run up to miles an hour?
 Q:
 What tony on the cereal box is?
 A:
@@ -24017,7 +24029,7 @@ Jaguar
 A:
 Civet Cat
 Q:
-Does its speeds reach over  miles per hour?
+Does its speeds reach over miles per hour?
 A:
 Cheetah
 A:
@@ -24033,7 +24045,7 @@ Is it a cross between a tiger and something else?
 A:
 Liger
 Q:
-Does it have  really long teeth in the front?
+Does it have really long teeth in the front?
 A:
 Sabertooth Tiger
 A:
@@ -24111,7 +24123,7 @@ Raccoon
 Q:
 Does its pouch open backwards?
 Q:
-Can it leap  feet to tree to tree?
+Can it leap feet to tree to tree?
 A:
 Tree Kangaroo
 A:
@@ -24773,7 +24785,7 @@ Emu
 A:
 Giraffe
 Q:
-Does it have hard  rough skin?
+Does it have hard rough skin?
 A:
 Armadillo
 Q:
@@ -24881,7 +24893,7 @@ Chameleon
 A:
 Red Panda
 Q:
-Does it have more then  legs?
+Does it have more then legs?
 A:
 Spider
 A:
@@ -24927,7 +24939,7 @@ Bongo
 Q:
 Does it have thin horizontal stripes and spots on its body?
 Q:
-Does it hop  feet in the blue sky?
+Does it hop feet in the blue sky?
 A:
 Neeckey
 A:
@@ -25019,7 +25031,7 @@ Does it live in a fish tank?
 A:
 Angel Fish
 A:
-Oscar  Cichlid 
+Oscar Cichlid
 Q:
 Does it sting?
 A:
@@ -25199,7 +25211,7 @@ Does it climb trees?
 Q:
 Is it slow?
 Q:
-Does it have  toes?
+Does it have toes?
 Q:
 Does it have a pouch for its young?
 Q:
@@ -25391,7 +25403,7 @@ Lahsa Apso
 A:
 Chow Chow
 Q:
-Does your animal range in sizes from  feet or less to  feet?
+Does your animal range in sizes from feet or less to feet?
 Q:
 Is the most common color black and tan?
 A:
@@ -25839,7 +25851,7 @@ Does it live in the himlayas?
 A:
 Snow Leopard
 Q:
-Does it climb trees and haul  pounds up a tree with its bare teeth?
+Does it climb trees and haul pounds up a tree with its bare teeth?
 A:
 Jaguar
 A:
@@ -25951,7 +25963,7 @@ Warthog
 Q:
 Did it eat rabbits?
 Q:
-Does it run as fast as  miles per hour?
+Does it run as fast as miles per hour?
 Q:
 Does it live in australia?
 A:
@@ -26143,7 +26155,7 @@ German Shepherd Husky
 Q:
 Does it rattle?
 Q:
-Does it lay  miilion eggs?
+Does it lay miilion eggs?
 A:
 Conor
 A:
@@ -26325,7 +26337,7 @@ Prewaniatofua
 Q:
 Did it live in the ocean and attacked ships in stories?
 Q:
-Does it have sharp teeth live in warm water grow to  feet long and really exsist?
+Does it have sharp teeth live in warm water grow to feet long and really exsist?
 Q:
 Does it appear as a main character in any novels?
 A:
@@ -26485,7 +26497,7 @@ Is it used to herd animals like sheep and cows?
 Q:
 Is it sable and white blue merle or tri colored?
 Q:
-Do the females weigh around  pounds?
+Do the females weigh around pounds?
 A:
 Collie
 Q:
@@ -26569,7 +26581,7 @@ Maned Wolf
 Q:
 Is it afraid of a lion?
 Q:
-Does it walk on  legs?
+Does it walk on legs?
 Q:
 Does this animal help blind people?
 A:
@@ -26817,11 +26829,11 @@ Polar Bear
 Q:
 Does it catch fish?
 Q:
-Does it weigh more than  pounds?
+Does it weigh more than pounds?
 Q:
 Is it brown?
 Q:
-Does it weigh more than  pounds?
+Does it weigh more than pounds?
 A:
 Grizzly Bear
 Q:
@@ -27135,7 +27147,7 @@ Dog
 A:
 Dalmatian
 Q:
-Is it usaually black  white and likes to herd sheep?
+Is it usaually black white and likes to herd sheep?
 A:
 Border Collie
 Q:
@@ -27245,7 +27257,7 @@ Does it have long tail?
 Q:
 Does it have tufted ears?
 Q:
-Does it have  really long teeth in the front?
+Does it have really long teeth in the front?
 A:
 Sabertooth Tiger
 A:
@@ -27381,7 +27393,7 @@ Cougar
 Q:
 Is it all one color?
 Q:
-Does it have  big legs?
+Does it have big legs?
 Q:
 Is it a pack hunter?
 Q:
@@ -28377,7 +28389,7 @@ Dalmation
 Q:
 Did it live in early jurassic times?
 Q:
-Is it more than  feet long?
+Is it more than feet long?
 A:
 Basilosaurus
 A:
@@ -28581,7 +28593,7 @@ Border Collie
 A:
 Pembroke Welsh Corgi
 Q:
-Is there a famous movie with  of these?
+Is there a famous movie with of these?
 A:
 Dalmation
 A:
@@ -29209,9 +29221,9 @@ Tasmanian Devil
 Q:
 Does it hop?
 Q:
-Do you find it on an australian  cent coin?
+Do you find it on an australian cent coin?
 Q:
-Do it only have  legs?
+Do it only have legs?
 Q:
 Is it red?
 Q:
@@ -29245,7 +29257,7 @@ Person
 Q:
 Does it box?
 Q:
-Is it  feet?
+Is it feet?
 Q:
 Does it jumer really high?
 Q:
@@ -29277,7 +29289,7 @@ Kangaroo
 Q:
 Is it dangerous?
 Q:
-Are  legs shorter then the other?
+Are legs shorter then the other?
 A:
 Kangaroo
 A:
@@ -29391,7 +29403,7 @@ Does it run fast?
 Q:
 Is your animal brown and carrys a baby in her stomach?
 Q:
-Does it have  legs?
+Does it have legs?
 Q:
 Does it hop on two legs?
 A:
@@ -29483,7 +29495,7 @@ Blackfooted Ferret
 A:
 English Lop
 Q:
-Does it have more than  teeth?
+Does it have more than teeth?
 Q:
 Is it a pet?
 Q:
@@ -29809,7 +29821,7 @@ Hippo
 A:
 Unicorn
 Q:
-Does it have  legs?
+Does it have legs?
 Q:
 Was it the largest carnivore of the jurassic?
 A:
@@ -29857,7 +29869,7 @@ Elk
 A:
 Moose
 Q:
-Does it have thick folded skin  one or two horns on the nose?
+Does it have thick folded skin one or two horns on the nose?
 A:
 Rhinoceros
 Q:
@@ -30113,7 +30125,7 @@ Is it an albino?
 A:
 Albino Rhino
 Q:
-Is it  feet long?
+Is it feet long?
 A:
 White Rhinoceros
 A:
@@ -30311,7 +30323,7 @@ Does it eat hay?
 A:
 Cow
 Q:
-Can it reach up to  feet?
+Can it reach up to feet?
 A:
 Marine Dragon
 A:
@@ -30335,7 +30347,7 @@ Is it a animal that is like a pack mule?
 Q:
 Can you find it on a farm?
 Q:
-Does it have  stomachs?
+Does it have stomachs?
 A:
 Cow
 Q:
@@ -30389,7 +30401,7 @@ Bull
 A:
 Wildebeest
 Q:
-Can it leap as high as  feet in the air?
+Can it leap as high as feet in the air?
 Q:
 Does it have small hoves?
 Q:
@@ -30747,7 +30759,7 @@ Guanaco
 Q:
 Does it have a long neck known for its soft fleecy wool and loves to spit at you?
 Q:
-Does it have  humps?
+Does it have humps?
 A:
 Camel
 A:
@@ -31175,7 +31187,7 @@ Did it eat meat?
 Q:
 Does it live in the sea?
 Q:
-Did it live  million years ago?
+Did it live million years ago?
 Q:
 Was it like a plesiosaurus but with a shorter neck?
 A:
@@ -31207,11 +31219,11 @@ Does it have spots?
 A:
 Giraffe
 Q:
-Is it more than  metres long?
+Is it more than metres long?
 Q:
 Did it eat plants?
 Q:
-Was it  meters long?
+Was it meters long?
 Q:
 Does it use its long neck to reach for plants up high?
 Q:
@@ -31253,7 +31265,7 @@ Brachiosaurus
 Q:
 Does it have a long whiplash tail?
 Q:
-Was it over  metres long?
+Was it over metres long?
 A:
 Seismosaurus
 A:
@@ -31313,7 +31325,7 @@ Does it have a mouth?
 Q:
 Does it swim?
 Q:
-Is it  to  feet long?
+Is it to feet long?
 Q:
 Does it live in africa?
 A:
@@ -31777,7 +31789,7 @@ Does it have a trunk that becomes full size at the age of one year?
 A:
 Elephant Seal
 Q:
-Dose it live in the sea  eat plants in the sea?
+Dose it live in the sea eat plants in the sea?
 A:
 Dolphin
 A:
@@ -31943,7 +31955,7 @@ Is it an ichthyosaur with large eyes?
 A:
 Opothalmosaurus
 Q:
-Is it a m whale that eats sharks  million years ago?
+Is it a m whale that eats sharks million years ago?
 A:
 Basilosaurus
 A:
@@ -31975,7 +31987,7 @@ Is it bigger then a dolphin?
 A:
 Seahorse
 Q:
-Does it have more than  arms?
+Does it have more than arms?
 A:
 Octupus
 A:
@@ -32005,7 +32017,7 @@ Does it have claws?
 Q:
 Can it live on land and water?
 Q:
-Does it have more than  legs?
+Does it have more than legs?
 A:
 Crayfish
 Q:
@@ -32045,7 +32057,7 @@ Coral
 Q:
 Does it lay eggs on the beach?
 Q:
-Does it have more than  pairs of legs?
+Does it have more than pairs of legs?
 A:
 Horshoe Crab
 Q:
@@ -32079,7 +32091,7 @@ Squrtle
 Q:
 Does it have many legs?
 Q:
-Does it live to roughly  years?
+Does it live to roughly years?
 A:
 Lobster
 A:
@@ -32421,7 +32433,7 @@ Does it resemble a small whale?
 Q:
 Is it much lager then a porpoise?
 Q:
-Does it have small teeth a bulgy head and grows  feet long?
+Does it have small teeth a bulgy head and grows feet long?
 Q:
 Is it cute?
 Q:
@@ -32473,7 +32485,7 @@ Does it have a large funny nose?
 A:
 Manatee
 Q:
-When born they are  feet long and wiegh almost as much as  tons does it weigh about  tons at birth?
+When born they are feet long and wiegh almost as much as tons does it weigh about tons at birth?
 Q:
 Does it have sharp teeth?
 Q:
@@ -32499,7 +32511,7 @@ Does it attack other animals?
 A:
 Shark
 Q:
-Does it live in canada can weigh up to  pounds and is humungous?
+Does it live in canada can weigh up to pounds and is humungous?
 A:
 Canadian Musky
 Q:
@@ -32619,7 +32631,7 @@ Is it a baracuda?
 A:
 Baracuda
 Q:
-Can it reach the length of  feet?
+Can it reach the length of feet?
 Q:
 Does it like to swim?
 A:
@@ -32627,7 +32639,7 @@ Blue Whale
 A:
 Sperm Whale
 Q:
-Does it have  atk points and  def points it is a yugioh monster?
+Does it have atk points and def points it is a yugioh monster?
 A:
 Great White Shark
 Q:
@@ -32761,7 +32773,7 @@ Is it a large animal?
 Q:
 Does it have tentacles?
 Q:
-Does it have  tenticles?
+Does it have tenticles?
 A:
 Octupus
 A:
@@ -32927,9 +32939,9 @@ Does it eat shells?
 Q:
 Does it eat fish?
 Q:
-Does it have more than  legs?
+Does it have more than legs?
 Q:
-Does it have  legs?
+Does it have legs?
 A:
 Octopus
 Q:
@@ -33027,7 +33039,7 @@ Does it have more than eight legs?
 A:
 Squid
 Q:
-Dose it have  legs?
+Dose it have legs?
 A:
 Hipopotomus
 A:
@@ -33093,7 +33105,7 @@ Sea Otter
 Q:
 Does it squirt out ink to protect itself?
 Q:
-Does it have  arms?
+Does it have arms?
 Q:
 Does it have bones?
 Q:
@@ -33105,7 +33117,7 @@ Giant Squid
 A:
 Octupus
 Q:
-Does it have  legs?
+Does it have legs?
 A:
 Octopus
 Q:
@@ -33273,7 +33285,7 @@ Hippo
 A:
 Marine Iguana
 Q:
-Does it have  legs?
+Does it have legs?
 A:
 Octopus
 Q:
@@ -33309,7 +33321,7 @@ Sea Star
 Q:
 Does it live in dark caves?
 A:
-Proteus  A Human Fish
+Proteus A Human Fish
 Q:
 Is there one called jar jar binks?
 A:
@@ -33475,7 +33487,7 @@ Humoback Whale
 A:
 Beaver
 Q:
-Does it eat around  tons of food a day?
+Does it eat around tons of food a day?
 A:
 Blue Whale
 A:
@@ -33667,7 +33679,7 @@ Does it live in fresh water?
 Q:
 Does it live on land and in water?
 Q:
-Does it have webbed feet sharp claws a flat bill  is it furry?
+Does it have webbed feet sharp claws a flat bill is it furry?
 A:
 Duckbilled Platypus
 Q:
@@ -33785,7 +33797,7 @@ Man A War
 A:
 Squid
 Q:
-Can its entire body length including tentacles be  ft or more?
+Can its entire body length including tentacles be ft or more?
 Q:
 Does it have sharp teeth?
 A:
@@ -33953,7 +33965,7 @@ Do people eat it on a bagel?
 A:
 Salmon
 Q:
-Does it have  eyes on one side of its head?
+Does it have eyes on one side of its head?
 A:
 Flounder
 Q:
@@ -34043,7 +34055,7 @@ Does it have eight legs?
 A:
 Octopus
 Q:
-Is it made of  water?
+Is it made of water?
 Q:
 Is it an invertebrate?
 A:
@@ -34287,7 +34299,7 @@ Alligator
 Q:
 Does it live in the rainforest?
 Q:
-Can it grow over  feet long?
+Can it grow over feet long?
 Q:
 Does it have a comblike crest scale hanging from throat?
 Q:
@@ -34557,7 +34569,7 @@ Pikachu
 Q:
 Does it have fur?
 Q:
-Is it black  white?
+Is it black white?
 A:
 Panda Bear
 Q:
@@ -34619,7 +34631,7 @@ Human
 Q:
 Does it have a colored bottom?
 Q:
-Does it run at speeds up to  miles per hour?
+Does it run at speeds up to miles per hour?
 A:
 Cheetah
 Q:
@@ -34749,7 +34761,7 @@ Does it have antlers?
 Q:
 Does it have really big antlers?
 Q:
-Is it  feet tall?
+Is it feet tall?
 A:
 Elk
 A:
@@ -34819,7 +34831,7 @@ Black Bear
 A:
 House Cat
 Q:
-Does it have less than  legs?
+Does it have less than legs?
 A:
 Human
 Q:
@@ -35003,7 +35015,7 @@ Dose it have a tail?
 Q:
 Is it made up?
 A:
-Crabbit Mixture Or A Crab  Rabbit
+Crabbit Mixture Or A Crab Rabbit
 Q:
 Does it live in asia or africa?
 A:
@@ -35157,7 +35169,7 @@ Peacock
 A:
 Koala Bear
 Q:
-Does it have oily fur  live in the rainforest?
+Does it have oily fur live in the rainforest?
 Q:
 Does your animal run quickly in the jungle or rain forest?
 A:
@@ -35509,11 +35521,11 @@ Polar Bear
 Q:
 Does it have small tusks?
 Q:
-Does it have  toes and is very slow?
+Does it have toes and is very slow?
 A:
 Three Toed Sloth
 Q:
-Do the males have  extra tusks growing through the roof of its mouth?
+Do the males have extra tusks growing through the roof of its mouth?
 A:
 Babirusa
 A:
@@ -35599,7 +35611,7 @@ Does it have a hood?
 A:
 Cobra
 Q:
-Is it the heaviest snake weighing over  pounds?
+Is it the heaviest snake weighing over pounds?
 A:
 Anaconda
 Q:
@@ -35773,7 +35785,7 @@ Does it eat leaves?
 Q:
 Does it only eat eucalyptus leaves?
 Q:
-Does it sleep  of the time?
+Does it sleep of the time?
 Q:
 Is it brown?
 Q:
@@ -35975,7 +35987,7 @@ Chimpanzee
 Q:
 Does it move very slowly?
 Q:
-Does it have  toes?
+Does it have toes?
 A:
 Toed Sloth
 Q:
@@ -36773,7 +36785,7 @@ Velociraptor
 Q:
 Does it have a shell?
 Q:
-Was it a  foot long prehistoric millipede?
+Was it a foot long prehistoric millipede?
 A:
 Arthropluera
 A:
@@ -36793,7 +36805,7 @@ Does it have a big claw on his front legs to defend itself?
 A:
 Iguanodon
 Q:
-Was it a a  foot long hadrosaur?
+Was it a a foot long hadrosaur?
 A:
 Parasaurolophus
 A:
@@ -36819,7 +36831,7 @@ Trannosaurus Rex
 Q:
 Is it very slow?
 Q:
-Does it have more then  body segements?
+Does it have more then body segements?
 A:
 Ant
 Q:
@@ -36853,7 +36865,7 @@ Pharret
 A:
 Armadillo
 Q:
-Is it poisonous red  black and found in east karana?
+Is it poisonous red black and found in east karana?
 A:
 Crag Spider
 Q:
@@ -37677,7 +37689,7 @@ Does it walk on four legs?
 Q:
 Is it endangered?
 Q:
-Can it go from  to  miles an hour in  seconds?
+Can it go from to miles an hour in seconds?
 A:
 Cheeta
 A:
@@ -38015,7 +38027,7 @@ Miniature Horse
 A:
 Falabela Pony
 Q:
-Does it walk on  legs at all times ?
+Does it walk on legs at all times ?
 Q:
 Does it climb trees?
 Q:
@@ -38113,7 +38125,7 @@ Does it have long legs and eats twigs?
 Q:
 Does it eat grass and is very fast?
 Q:
-Does an adult weigh more than  pounds?
+Does an adult weigh more than pounds?
 Q:
 Does it have broad flat antlers?
 Q:
@@ -38129,7 +38141,7 @@ White Tailed Deer
 A:
 Elk
 Q:
-It its life span  years?
+It its life span years?
 A:
 Red Deer
 A:
@@ -38283,7 +38295,7 @@ Grizzly Bear
 Q:
 Does it have a hump on its shoulders?
 Q:
-Can it weigh more than  pounds?
+Can it weigh more than pounds?
 A:
 Kodiak Bear
 A:
@@ -38349,7 +38361,7 @@ Bear
 A:
 Wolverine
 Q:
-Does it weigh over  pounds?
+Does it weigh over pounds?
 Q:
 Is it a kind of a bear?
 Q:
@@ -38953,7 +38965,7 @@ Echidna
 A:
 Porcupine
 Q:
-Does it have  atkpoints and defpointsit is a sharkoff of yugioh?
+Does it have atkpoints and defpointsit is a sharkoff of yugioh?
 A:
 Great White Shark
 A:
