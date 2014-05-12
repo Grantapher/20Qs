@@ -1,4 +1,7 @@
+import java.awt.Container;
 import java.awt.EventQueue;
+import java.io.File;
+import javax.swing.JOptionPane;
 
 public class Main {
 	public static void main(String[] args) {
@@ -12,28 +15,14 @@ public class Main {
 				}
 			}
 		}
-		catch(ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(StartGUI.class.getName())
-					.log(java.util.logging.Level.SEVERE, null, ex);
-		}
-		catch(InstantiationException ex) {
-			java.util.logging.Logger.getLogger(StartGUI.class.getName())
-					.log(java.util.logging.Level.SEVERE, null, ex);
-		}
-		catch(IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(StartGUI.class.getName())
-					.log(java.util.logging.Level.SEVERE, null, ex);
-		}
-		catch(javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(StartGUI.class.getName())
-					.log(java.util.logging.Level.SEVERE, null, ex);
-		}
+		catch(ClassNotFoundException ex) {}
+		catch(InstantiationException ex) {}
+		catch(IllegalAccessException ex) {}
+		catch(javax.swing.UnsupportedLookAndFeelException ex) {}
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					@SuppressWarnings("unused")
-					questionTree tree = new questionTree(
-							"C:/Users/Grant/Documents/GitHub/20Qs/20Q/src/question.txt");
+					new questionTree(new File("src/question.txt"));
 					StartGUI frame = new StartGUI();
 					frame.setVisible(true);
 				}
@@ -42,5 +31,13 @@ public class Main {
 				}
 			}
 		});
+	}
+	
+	public static void exitCheck(Container contentPane) {
+		if(JOptionPane.showConfirmDialog(contentPane,
+				"Are you sure you want to exit?", "Exit",
+				JOptionPane.YES_NO_CANCEL_OPTION,
+				JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION)
+			System.exit(0);
 	}
 }

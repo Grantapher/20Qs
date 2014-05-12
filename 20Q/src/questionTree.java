@@ -3,23 +3,29 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class questionTree {
 	public static questionNode	head;
 	private Scanner				fReader;
 	private static PrintWriter	fWriter;
-	private static String		filepath;
+	private static File			file;
 	
-	questionTree(String filepath) {
+	questionTree(File file) {
 		try {
-			questionTree.filepath = filepath;
-			fReader = new Scanner(new File(filepath));
+			questionTree.file = file;
+			fReader = new Scanner(file);
 			head = create(null, head);
 			fReader.close();
 		}
 		catch(FileNotFoundException e) {
-			System.out.println("File not Found!");
-			System.exit(0);
+			JOptionPane.showMessageDialog(
+					null,
+					new String("Could not find the file:\n"
+							+ System.getProperty("user.dir")
+							+ file.getPath()), "Error!",
+					JOptionPane.ERROR_MESSAGE);
+			System.exit(1);
 		}
 	}
 	
@@ -38,13 +44,11 @@ public class questionTree {
 	
 	public static void write() {
 		try {
-			fWriter = new PrintWriter(new File(filepath), "UTF-8");
+			fWriter = new PrintWriter(file, "UTF-8");
 			writeOut(head);
 			fWriter.close();
 		}
-		catch(FileNotFoundException e) {
-			e.printStackTrace();
-		}
+		catch(FileNotFoundException e) {}
 		catch(UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}

@@ -37,11 +37,7 @@ public class addGUI extends JFrame {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
-				if(JOptionPane.showConfirmDialog(getContentPane(),
-						"Are you sure you want to exit?", "Exit",
-						JOptionPane.YES_NO_CANCEL_OPTION,
-						JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION)
-					System.exit(0);
+				Main.exitCheck(getContentPane());
 			}
 		});
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);

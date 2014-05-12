@@ -32,6 +32,10 @@ Q:
 Is it a plant?
 A:
 Tree
+Q:
+Can you go inside of it?
+A:
+Buildings
 A:
 Rock
 A:

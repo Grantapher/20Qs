@@ -1,5 +1,4 @@
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
@@ -29,11 +28,7 @@ public class QuestionGUI extends JFrame {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
-				if(JOptionPane.showConfirmDialog(getContentPane(),
-						"Are you sure you want to exit?", "Exit",
-						JOptionPane.YES_NO_CANCEL_OPTION,
-						JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION)
-					System.exit(0);
+				Main.exitCheck(getContentPane());
 			}
 		});
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -73,10 +68,7 @@ public class QuestionGUI extends JFrame {
 		yesBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				current = current.yes;
-				if(current.isQuestion())
-					questionTxt.setText(current.data);
-				else
-					moveOn();
+				questionCheck();
 			}
 		});
 		yesBtn.setBounds(85, 19, 89, 23);
@@ -85,10 +77,7 @@ public class QuestionGUI extends JFrame {
 		noBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				current = current.no;
-				if(current.isQuestion())
-					questionTxt.setText(current.data);
-				else
-					moveOn();
+				questionCheck();
 			}
 		});
 		noBtn.setBounds(184, 19, 89, 23);
@@ -96,11 +85,7 @@ public class QuestionGUI extends JFrame {
 		JButton exitBtn = new JButton("Exit");
 		exitBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(JOptionPane.showConfirmDialog(getContentPane(),
-						"Are you sure you want to exit?", "Exit",
-						JOptionPane.YES_NO_CANCEL_OPTION,
-						JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION)
-					System.exit(0);
+				Main.exitCheck(getContentPane());
 			}
 		});
 		exitBtn.setBounds(269, 168, 89, 23);
@@ -116,6 +101,13 @@ public class QuestionGUI extends JFrame {
 		});
 		undoButton.setBounds(135, 53, 89, 23);
 		panel.add(undoButton);
+	}
+	
+	protected void questionCheck() {
+		if(current.isQuestion())
+			questionTxt.setText(current.data);
+		else
+			moveOn();
 	}
 	
 	void moveOn() {
