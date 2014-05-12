@@ -21,18 +21,17 @@ public class questionTree {
 			fReader.close();
 		}
 		catch(FileNotFoundException e) {
-			JOptionPane.showMessageDialog(
-					null,
-					new String("Could not find the file:\n"
-							+ System.getProperty("user.dir")
-							+ file.getPath())
-							+ "\nFind your question file.", "Error!",
-					JOptionPane.ERROR_MESSAGE);
+			JOptionPane
+					.showMessageDialog(
+							null,
+							"Find your .q20 question file.",
+							"File Open", JOptionPane.INFORMATION_MESSAGE);
 			JFileChooser fc = new JFileChooser(
 					System.getProperty("user.dir"));
 			fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-			fc.setFileFilter(new FileNameExtensionFilter("20 Questions File",
-					"q20"));
+			fc.setFileFilter(new FileNameExtensionFilter(
+					"20 Questions File", "q20"));
+			fc.setAcceptAllFileFilterUsed(false);
 			int returnVal = fc.showOpenDialog(null);
 			if(returnVal == JFileChooser.APPROVE_OPTION) {
 				new questionTree(fc.getSelectedFile());
