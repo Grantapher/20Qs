@@ -22,7 +22,8 @@ public class Main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					new questionTree(new File("src/question.txt"));
+					new questionTree(new File("src/bigquestion.q20"));
+					
 					StartGUI frame = new StartGUI();
 					frame.setVisible(true);
 				}

@@ -3,7 +3,9 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class questionTree {
 	public static questionNode	head;
@@ -23,9 +25,18 @@ public class questionTree {
 					null,
 					new String("Could not find the file:\n"
 							+ System.getProperty("user.dir")
-							+ file.getPath()), "Error!",
+							+ file.getPath())
+							+ "\nFind your question file.", "Error!",
 					JOptionPane.ERROR_MESSAGE);
-			System.exit(1);
+			JFileChooser fc = new JFileChooser(
+					System.getProperty("user.dir"));
+			fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+			fc.setFileFilter(new FileNameExtensionFilter("20 Questions File",
+					"q20"));
+			int returnVal = fc.showOpenDialog(null);
+			if(returnVal == JFileChooser.APPROVE_OPTION) {
+				new questionTree(fc.getSelectedFile());
+			}
 		}
 	}
 	

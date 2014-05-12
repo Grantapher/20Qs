@@ -1,6 +1,8 @@
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.JLabel;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -10,8 +12,6 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JRadioButton;
@@ -79,25 +79,23 @@ public class addGUI extends JFrame {
 		editLbl.setBounds(10, 92, 338, 14);
 		panel.add(editLbl);
 		objectTxt = new JTextField();
-		objectTxt.addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyReleased(KeyEvent e) {
-				lengthLimit();
-				textUpdate();
-			}
-			
-			@Override
-			public void keyTyped(KeyEvent e) {
-				lengthLimit();
-				textUpdate();
-			}
-			
-			@Override
-			public void keyPressed(KeyEvent e) {
-				lengthLimit();
-				textUpdate();
-			}
-		});
+		objectTxt.getDocument().addDocumentListener(
+				new DocumentListener() {
+					@Override
+					public void insertUpdate(DocumentEvent e) {
+						textUpdate();
+					}
+					
+					@Override
+					public void removeUpdate(DocumentEvent e) {
+						textUpdate();
+					}
+					
+					@Override
+					public void changedUpdate(DocumentEvent e) {
+						textUpdate();
+					}
+				});
 		objectTxt.setHorizontalAlignment(SwingConstants.CENTER);
 		objectTxt.setBounds(0, 36, 358, 20);
 		panel.add(objectTxt);
@@ -191,17 +189,14 @@ public class addGUI extends JFrame {
 		panel.add(ansLbl);
 	}
 	
-	protected void lengthLimit() {
-		if(objectTxt.getText().length() > 17) {
-			objectTxt.setText(objectTxt.getText().substring(0, 17));
-		}
-	}
-	
 	boolean vowelCheck(char c) {
 		return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
 	}
 	
 	void textUpdate() {
+		if(objectTxt.getText().length() > 17) {
+			objectTxt.setText(objectTxt.getText().substring(0, 17));
+		}
 		String temp = objectTxt.getText();
 		char first = 0;
 		if(!temp.isEmpty())
