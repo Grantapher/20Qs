@@ -6,12 +6,13 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
+import java.net.MalformedURLException;
+import java.net.URL;
 import javax.swing.SwingConstants;
 
 @SuppressWarnings("serial")
 public class waitGUI extends JFrame {
 	private JPanel contentPane;
-	private static ImageIcon loadGif = new ImageIcon("src/load.gif");
 	public JLabel loadingObj;
 	private JLayeredPane layeredPane;
 	private JLabel object;
@@ -34,10 +35,6 @@ public class waitGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		JLabel label = new JLabel(loadGif);
-		label.setForeground(Color.BLACK);
-		label.setBounds(0, 0, 318, 322);
-		layeredPane.add(label, 1);
 		loadingObj = new JLabel();
 		loadingObj.setHorizontalAlignment(SwingConstants.CENTER);
 		loadingObj.setVerticalAlignment(SwingConstants.CENTER);
@@ -50,6 +47,23 @@ public class waitGUI extends JFrame {
 		object.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		object.setForeground(Color.WHITE);
 		object.setBounds(0, 0, 318, 294);
+		ImageIcon loadGif = null;
+		try {
+			loadGif = new ImageIcon(new URL("http://i.imgur.com/sDxFWx5.gif"));
+		}
+		catch(MalformedURLException e) {
+							.showMessageDialog(
+							null,
+							"Couldn't find the gif. :/",
+							"Error", JOptionPane.ERROR_MESSAGE);
+
+			loadingObj.setForeground(Color.BLACK);
+			object.setForeground(Color.BLACK);
+		}
+		JLabel label = new JLabel(loadGif);
+		label.setForeground(Color.BLACK);
+		label.setBounds(0, 0, 318, 322);
+		layeredPane.add(label, 1);
 		layeredPane.add(object, 0);
 		layeredPane.add(loadingObj, 0);
 		contentPane.add(layeredPane);

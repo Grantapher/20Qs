@@ -1,7 +1,13 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.Scanner;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -12,6 +18,7 @@ public class questionTree {
 	private Scanner fReader;
 	private static PrintWriter fWriter;
 	private static File file;
+	private static URL url;
 	
 	questionTree(File file) {
 		try {
@@ -21,9 +28,11 @@ public class questionTree {
 			fReader.close();
 		}
 		catch(FileNotFoundException e) {
-			JOptionPane.showMessageDialog(null,
-					"Find your .q20 question file.", "File Open",
-					JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane
+					.showMessageDialog(
+							null,
+							"Find your .q20 question file or a read-only file will be fetched from the internet.",
+							"File Open", JOptionPane.INFORMATION_MESSAGE);
 			JFileChooser fc = new JFileChooser(
 					System.getProperty("user.dir"));
 			fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -32,10 +41,29 @@ public class questionTree {
 			fc.setAcceptAllFileFilterUsed(false);
 			int returnVal = fc.showOpenDialog(null);
 			if(returnVal == JFileChooser.CANCEL_OPTION)
-				System.exit(0);
+				try {
+					url = new URL(
+							"https://docs.google.com/uc?authuser=0&id=0ByEZo2nCK6IySVdFb3FWODUxRW8&export=download");
+					new questionTree(url.openStream());
+				}
+				catch(MalformedURLException e1) {
+					JOptionPane.showMessageDialog(null,
+							"URL didn't work :/", "Error",
+							JOptionPane.ERROR_MESSAGE);
+				}
+				catch(IOException e1) {
+					JOptionPane.showMessageDialog(null, "I/O Exception./",
+							"Error", JOptionPane.ERROR_MESSAGE);
+				}
 			if(returnVal == JFileChooser.APPROVE_OPTION)
 				new questionTree(fc.getSelectedFile());
 		}
+	}
+	
+	public questionTree(InputStream in) {
+		fReader = new Scanner(in);
+		head = create(null, head);
+		fReader.close();
 	}
 	
 	private questionNode create(questionNode previous, questionNode current) {
@@ -57,10 +85,25 @@ public class questionTree {
 			writeOut(head);
 			fWriter.close();
 		}
-		catch(FileNotFoundException e) {}
-		catch(UnsupportedEncodingException e) {
-			e.printStackTrace();
+		catch(FileNotFoundException e) {
+			JOptionPane.showMessageDialog(null,
+					"File didn't work. Trying the URL next", "Error",
+					JOptionPane.ERROR_MESSAGE);
+			try {
+				URLConnection connection = url.openConnection();
+				connection.setDoOutput(true);
+				fWriter = new PrintWriter(new OutputStreamWriter(
+						connection.getOutputStream()));
+				writeOut(head);
+				fWriter.close();
+			}
+			catch(IOException e1) {
+				JOptionPane.showMessageDialog(null,
+						"URL didn't work. ¯\\_(ツ)_/¯", "Error",
+						JOptionPane.ERROR_MESSAGE);
+			}
 		}
+		catch(UnsupportedEncodingException e) {}
 	}
 	
 	private static void writeOut(questionNode current) {
