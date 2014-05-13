@@ -19,13 +19,11 @@ public class Main {
 		catch(InstantiationException ex) {}
 		catch(IllegalAccessException ex) {}
 		catch(javax.swing.UnsupportedLookAndFeelException ex) {}
+		new questionTree(new File("¯\\_(ツ)_/¯"));
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					new questionTree(new File("src/bigquestion.q20"));
-					
-					StartGUI frame = new StartGUI();
-					frame.setVisible(true);
+					waiter.Wait(0.5);
 				}
 				catch(Exception e) {
 					e.printStackTrace();

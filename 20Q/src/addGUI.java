@@ -19,13 +19,13 @@ import javax.swing.ButtonGroup;
 
 @SuppressWarnings("serial")
 public class addGUI extends JFrame {
-	private JPanel				contentPane;
-	private String				lastData;
-	private JLabel				editLbl;
-	private static JTextField	objectTxt;
-	private static JTextField	questionTxt;
-	private final ButtonGroup	buttonGroup	= new ButtonGroup();
-	private boolean				answer;
+	private JPanel contentPane;
+	private String lastData;
+	private JLabel editLbl;
+	private static JTextField objectTxt;
+	private static JTextField questionTxt;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private boolean answer;
 	
 	/**
 	 * Create the frame.
@@ -144,6 +144,7 @@ public class addGUI extends JFrame {
 								JOptionPane.YES_NO_CANCEL_OPTION,
 								JOptionPane.QUESTION_MESSAGE) != JOptionPane.YES_OPTION)
 					return;
+				setVisible(false);
 				questionTree.add(objectTxt.getText(),
 						questionTxt.getText(), answer);
 				questionTree.write();
@@ -158,7 +159,6 @@ public class addGUI extends JFrame {
 						}
 					}
 				});
-				setVisible(false);
 			}
 		});
 		getRootPane().setDefaultButton(finishBtn);

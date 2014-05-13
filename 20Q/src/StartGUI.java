@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 
 @SuppressWarnings("serial")
 public class StartGUI extends JFrame {
-	private JPanel	contentPane;
+	private JPanel contentPane;
 	
 	/**
 	 * Create the frame.
@@ -53,7 +53,8 @@ public class StartGUI extends JFrame {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							QuestionGUI frame = new QuestionGUI(questionTree.head);
+							QuestionGUI frame = new QuestionGUI(
+									questionTree.head);
 							frame.setVisible(true);
 						}
 						catch(Exception e) {

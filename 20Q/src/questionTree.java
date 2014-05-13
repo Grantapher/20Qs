@@ -8,10 +8,10 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class questionTree {
-	public static questionNode	head;
-	private Scanner				fReader;
-	private static PrintWriter	fWriter;
-	private static File			file;
+	public static questionNode head;
+	private Scanner fReader;
+	private static PrintWriter fWriter;
+	private static File file;
 	
 	questionTree(File file) {
 		try {
@@ -21,11 +21,9 @@ public class questionTree {
 			fReader.close();
 		}
 		catch(FileNotFoundException e) {
-			JOptionPane
-					.showMessageDialog(
-							null,
-							"Find your .q20 question file.",
-							"File Open", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null,
+					"Find your .q20 question file.", "File Open",
+					JOptionPane.INFORMATION_MESSAGE);
 			JFileChooser fc = new JFileChooser(
 					System.getProperty("user.dir"));
 			fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -33,9 +31,10 @@ public class questionTree {
 					"20 Questions File", "q20"));
 			fc.setAcceptAllFileFilterUsed(false);
 			int returnVal = fc.showOpenDialog(null);
-			if(returnVal == JFileChooser.APPROVE_OPTION) {
+			if(returnVal == JFileChooser.CANCEL_OPTION)
+				System.exit(0);
+			if(returnVal == JFileChooser.APPROVE_OPTION)
 				new questionTree(fc.getSelectedFile());
-			}
 		}
 	}
 	
