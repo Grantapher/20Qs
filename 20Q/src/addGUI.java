@@ -24,6 +24,7 @@ public class addGUI extends JFrame {
 	private JLabel editLbl;
 	private static JTextField objectTxt;
 	private static JTextField questionTxt;
+	private static JRadioButton yesBtn;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private boolean answer;
 	
@@ -144,10 +145,11 @@ public class addGUI extends JFrame {
 								JOptionPane.YES_NO_CANCEL_OPTION,
 								JOptionPane.QUESTION_MESSAGE) != JOptionPane.YES_OPTION)
 					return;
-				setVisible(false);
+				yesBtn.setEnabled(false);
 				questionTree.add(objectTxt.getText(),
 						questionTxt.getText(), answer);
 				questionTree.write();
+				setVisible(false);
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
@@ -162,7 +164,7 @@ public class addGUI extends JFrame {
 			}
 		});
 		getRootPane().setDefaultButton(finishBtn);
-		JRadioButton yesBtn = new JRadioButton("Yes");
+		yesBtn = new JRadioButton("Yes");
 		yesBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				answer = true;

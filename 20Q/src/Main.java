@@ -19,7 +19,7 @@ public class Main {
 		catch(InstantiationException ex) {}
 		catch(IllegalAccessException ex) {}
 		catch(javax.swing.UnsupportedLookAndFeelException ex) {}
-		new questionTree(new File("¯\\_(ツ)_/¯"));
+		new questionTree((File) null);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

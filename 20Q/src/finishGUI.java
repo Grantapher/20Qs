@@ -13,7 +13,7 @@ import javax.swing.border.EmptyBorder;
 
 @SuppressWarnings("serial")
 public class finishGUI extends JFrame {
-	private JPanel	contentPane;
+	private JPanel contentPane;
 	
 	/**
 	 * Create the frame.

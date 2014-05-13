@@ -13,7 +13,7 @@ import java.awt.event.WindowEvent;
 
 @SuppressWarnings("serial")
 public class resultGUI extends JFrame {
-	private JPanel	contentPane;
+	private JPanel contentPane;
 	
 	/**
 	 * Create the frame.
@@ -41,8 +41,7 @@ public class resultGUI extends JFrame {
 		titleLbl.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		titleLbl.setBounds(10, 11, 358, 14);
 		contentPane.add(titleLbl);
-		JLabel openingLbl = new JLabel(
-				"Is the object you are thinking of");
+		JLabel openingLbl = new JLabel("Is the object you are thinking of");
 		openingLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		openingLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		openingLbl.setBounds(10, 36, 358, 14);
@@ -94,7 +93,6 @@ public class resultGUI extends JFrame {
 		});
 		noBtn.setBounds(184, 19, 89, 23);
 		panel.add(noBtn);
-		
 		JButton undoBtn = new JButton("Undo");
 		undoBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -102,7 +100,8 @@ public class resultGUI extends JFrame {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							QuestionGUI frame = new QuestionGUI(current.undo);
+							QuestionGUI frame = new QuestionGUI(
+									current.undo);
 							frame.setVisible(true);
 						}
 						catch(Exception e) {
@@ -110,7 +109,6 @@ public class resultGUI extends JFrame {
 						}
 					}
 				});
-			
 			}
 		});
 		undoBtn.setBounds(135, 53, 89, 23);
