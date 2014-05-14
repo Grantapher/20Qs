@@ -32,13 +32,14 @@ public class questionTree {
 			JOptionPane
 					.showMessageDialog(
 							null,
-							"File not found. ¯\\_(ツ)_/¯\nFind your .q20 file.\nIf you can't find it, a read-only copy will be fetched from the internet.",
+							"File not found. ¯\\_(ツ)_/¯\nFind your .q20 file or a compatible text file.\nIf you can't find it, a read-only copy will be fetched from the internet.",
 							"Error", JOptionPane.ERROR_MESSAGE);
 			JFileChooser fc = new JFileChooser();
 			fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 			fc.setCurrentDirectory(new File(System.getProperty("user.dir")));
 			fc.setFileFilter(new FileNameExtensionFilter(
-					"20 Questions Files", "q20"));
+					"20 Questions Files", "q20", "txt"));
+			fc.setAcceptAllFileFilterUsed(false);
 			int returnVal = fc.showOpenDialog(null);
 			if(returnVal == JFileChooser.CANCEL_OPTION) {
 				try {
