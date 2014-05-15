@@ -8,17 +8,23 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.Random;
 
 @SuppressWarnings("serial")
 public class StartGUI extends JFrame {
 	private JPanel contentPane;
+	private Random ran = new Random();
+	int x, y, z = 0;
 	
 	/**
 	 * Create the frame.
 	 */
 	public StartGUI() {
 		setTitle("20 Questions");
-		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 384, 288);
 		setLocationRelativeTo(null);
@@ -26,27 +32,52 @@ public class StartGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		JLabel titleLbl = new JLabel("20 Questions:");
+		final JPanel labelPan = new JPanel();
+		contentPane.add(labelPan);
+		labelPan.setLayout(null);
+		labelPan.setBounds(10, 10, getWidth() - 36, getHeight() - 56);
+		final JLabel titleLbl = new JLabel("20 Questions:");
+		titleLbl.setBounds(0, 0, labelPan.getWidth(), 22);
+		labelPan.add(titleLbl);
 		titleLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		titleLbl.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		titleLbl.setBounds(10, 11, 358, 14);
-		contentPane.add(titleLbl);
-		JLabel instructionLbl = new JLabel(
+		final JLabel instructionLbl = new JLabel(
 				"Think of an object, and I will try and guess it.");
+		instructionLbl.setBounds(0, titleLbl.getHeight() + 10,
+				labelPan.getWidth(), 14);
+		labelPan.add(instructionLbl);
 		instructionLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		instructionLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		instructionLbl.setBounds(10, 36, 358, 14);
-		contentPane.add(instructionLbl);
-		JLabel readyLbl = new JLabel("Ready?");
+		final JLabel readyLbl = new JLabel("Ready?");
+		readyLbl.setBounds(0, instructionLbl.getHeight() + 10
+				+ instructionLbl.getY(), labelPan.getWidth(), 14);
+		labelPan.add(readyLbl);
 		readyLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		readyLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		readyLbl.setBounds(10, 61, 358, 14);
-		contentPane.add(readyLbl);
-		JPanel panel = new JPanel();
-		panel.setBounds(10, 86, 358, 166);
-		contentPane.add(panel);
-		panel.setLayout(null);
-		JButton startBtn = new JButton("Start");
+		labelPan.setBounds(10, 10, getWidth() - 36, readyLbl.getHeight()
+				+ readyLbl.getY() + 10);
+		final JPanel btnPan = new JPanel();
+		btnPan.setBounds(10, labelPan.getHeight() + 20, getWidth() - 36,
+				getHeight() - 65 - labelPan.getHeight());
+		contentPane.add(btnPan);
+		btnPan.setLayout(null);
+		final JButton startBtn = new JButton("Start");
+		startBtn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				if(z < 10) {
+					z++;
+					x = ran.nextInt(btnPan.getWidth()
+							- startBtn.getWidth());
+					y = ran.nextInt(btnPan.getHeight()
+							- startBtn.getHeight());
+					startBtn.setBounds(x, y, startBtn.getWidth(),
+							startBtn.getHeight());
+					revalidate();
+					repaint();
+				}
+			}
+		});
 		startBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -64,15 +95,50 @@ public class StartGUI extends JFrame {
 				});
 			}
 		});
-		startBtn.setBounds(135, 55, 89, 23);
-		panel.add(startBtn);
-		JButton exitBtn = new JButton("Exit");
+		startBtn.setBounds((btnPan.getWidth() - 89) / 2,
+				(btnPan.getHeight()) / 2 - 27, 89, 23);
+		btnPan.add(startBtn);
+		final JButton exitBtn = new JButton("Exit");
 		exitBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});
-		exitBtn.setBounds(135, 88, 89, 23);
-		panel.add(exitBtn);
+		exitBtn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				z++;
+				x = ran.nextInt(btnPan.getWidth() - exitBtn.getWidth());
+				y = ran.nextInt(btnPan.getHeight() - exitBtn.getHeight());
+				exitBtn.setBounds(x, y, exitBtn.getWidth(),
+						exitBtn.getHeight());
+				revalidate();
+				repaint();
+			}
+		});
+		exitBtn.setBounds((btnPan.getWidth() - 89) / 2,
+				btnPan.getHeight() / 2 + 3, 89, 23);
+		btnPan.add(exitBtn);
+		addComponentListener(new ComponentAdapter() {
+			@Override
+			public void componentResized(ComponentEvent e) {
+				labelPan.setBounds(10, 10, getWidth() - 36,
+						getHeight() - 56);
+				titleLbl.setBounds(0, 0, labelPan.getWidth(), 22);
+				readyLbl.setBounds(0, instructionLbl.getHeight() + 10
+						+ instructionLbl.getY(), labelPan.getWidth(), 14);
+				instructionLbl.setBounds(0, titleLbl.getHeight() + 10,
+						labelPan.getWidth(), 14);
+				labelPan.setBounds(10, 10, getWidth() - 36,
+						readyLbl.getHeight() + readyLbl.getY() + 10);
+				btnPan.setBounds(10, labelPan.getHeight() + 20,
+						getWidth() - 36,
+						getHeight() - 65 - labelPan.getHeight());
+				startBtn.setBounds((btnPan.getWidth() - 89) / 2,
+						(btnPan.getHeight()) / 2 - 27, 89, 23);
+				exitBtn.setBounds((btnPan.getWidth() - 89) / 2,
+						btnPan.getHeight() / 2 + 3, 89, 23);
+			}
+		});
 	}
 }

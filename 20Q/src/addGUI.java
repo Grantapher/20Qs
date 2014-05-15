@@ -102,6 +102,23 @@ public class addGUI extends JFrame {
 		panel.add(objectTxt);
 		objectTxt.setColumns(10);
 		questionTxt = new JTextField();
+		questionTxt.getDocument().addDocumentListener(
+				new DocumentListener() {
+					@Override
+					public void insertUpdate(DocumentEvent e) {
+						textUpdate();
+					}
+					
+					@Override
+					public void removeUpdate(DocumentEvent e) {
+						textUpdate();
+					}
+					
+					@Override
+					public void changedUpdate(DocumentEvent e) {
+						textUpdate();
+					}
+				});
 		questionTxt.setHorizontalAlignment(SwingConstants.CENTER);
 		questionTxt.setBounds(0, 117, 358, 20);
 		panel.add(questionTxt);
@@ -199,6 +216,10 @@ public class addGUI extends JFrame {
 		if(objectTxt.getText().length() > 17) {
 			objectTxt.setText(objectTxt.getText().substring(0, 17));
 		}
+		if(questionTxt.getText().length() > 256) {
+			questionTxt.setText(questionTxt.getText().substring(0, 256));
+		}
+
 		String temp = objectTxt.getText();
 		char first = 0;
 		if(!temp.isEmpty())

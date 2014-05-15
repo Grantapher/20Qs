@@ -23,16 +23,18 @@ public class questionTree {
 	questionTree(File fileIn) {
 		file = fileIn;
 		if(file == null)
-			file = new File("bigquestion.q20");
+			file = new File("src/bigquestion.q20");
 		try {
 			fReader = new Scanner(file);
 			checkReader = new Scanner(file);
-			checkAndCreate(head);
+			checkAndCreate();
 			fReader.close();
 		}
 		catch(FileNotFoundException e) {
-			checkReader.close();
-			fReader.close();
+			if(checkReader != null)
+				checkReader.close();
+			if(fReader != null)
+				fReader.close();
 			JOptionPane
 					.showMessageDialog(
 							null,
@@ -72,16 +74,16 @@ public class questionTree {
 		file = null;
 		fReader = new Scanner(openStream);
 		checkReader = new Scanner(openStream);
-		create(null, head);
+		checkAndCreate();
 		fReader.close();
 	}
 	
-	private void checkAndCreate(questionNode head) {
+	private void checkAndCreate() {
 		if(checkReader.hasNextLine()) {
 			String firstLine = checkReader.nextLine();
 			if(firstLine.equals("Q:") || firstLine.equals("A:")) {
 				checkReader.close();
-				create(null, head);
+				head = create(null, head);
 				return;
 			}
 		}

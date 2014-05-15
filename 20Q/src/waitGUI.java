@@ -20,6 +20,7 @@ public class waitGUI extends JFrame {
 	public JLabel loadingObj;
 	private JLayeredPane layeredPane;
 	private JLabel object;
+	public String str;
 	
 	/**
 	 * Create the frame.
@@ -27,30 +28,7 @@ public class waitGUI extends JFrame {
 	 * @param secs
 	 */
 	public waitGUI() {
-		layeredPane = new JLayeredPane();
-		layeredPane.setBorder(null);
-		layeredPane.setBounds(0, 0, 318, 322);
-		setTitle("20 Questions");
 		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 324, 347);
-		setLocationRelativeTo(null);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		loadingObj = new JLabel();
-		loadingObj.setHorizontalAlignment(SwingConstants.CENTER);
-		loadingObj.setVerticalAlignment(SwingConstants.CENTER);
-		loadingObj.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		loadingObj.setForeground(Color.WHITE);
-		loadingObj.setBounds(0, 28, 318, 294);
-		object = new JLabel("Loading objects...");
-		object.setHorizontalAlignment(SwingConstants.CENTER);
-		object.setVerticalAlignment(SwingConstants.CENTER);
-		object.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		object.setForeground(Color.WHITE);
-		object.setBounds(0, 0, 318, 294);
 		ImageIcon loadGif = null;
 		File load = new File("load.gif");
 		if(!load.exists()) {
@@ -62,8 +40,8 @@ public class waitGUI extends JFrame {
 			JFileChooser fc = new JFileChooser();
 			fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 			fc.setCurrentDirectory(new File(System.getProperty("user.dir")));
-			fc.setFileFilter(new FileNameExtensionFilter("GIF Files",
-					"gif"));
+			fc.setFileFilter(new FileNameExtensionFilter("Image Files",
+					"jpg", "png", "gif", "bmp"));
 			int returnVal = fc.showOpenDialog(null);
 			if(returnVal == JFileChooser.CANCEL_OPTION) {
 				try {
@@ -80,9 +58,36 @@ public class waitGUI extends JFrame {
 			}
 		} else
 			loadGif = new ImageIcon(load.getPath());
+		layeredPane = new JLayeredPane();
+		layeredPane.setBorder(null);
+		layeredPane.setBounds(0, 0, loadGif.getIconWidth(),
+				loadGif.getIconHeight());
+		setTitle("20 Questions");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, loadGif.getIconWidth() + 6,
+				loadGif.getIconHeight() + 25);
+		setLocationRelativeTo(null);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		loadingObj = new JLabel();
+		loadingObj.setHorizontalAlignment(SwingConstants.CENTER);
+		loadingObj.setVerticalAlignment(SwingConstants.CENTER);
+		loadingObj.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		loadingObj.setForeground(Color.WHITE);
+		loadingObj.setBounds(0, 28, loadGif.getIconWidth(),
+				loadGif.getIconHeight() - 28);
+		object = new JLabel("Loading objects...");
+		object.setHorizontalAlignment(SwingConstants.CENTER);
+		object.setVerticalAlignment(SwingConstants.CENTER);
+		object.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		object.setForeground(Color.WHITE);
+		object.setBounds(0, 0, loadGif.getIconWidth(),
+				loadGif.getIconHeight() - 28);
 		JLabel label = new JLabel(loadGif);
-		label.setForeground(Color.BLACK);
-		label.setBounds(0, 0, 318, 322);
+		label.setBounds(0, 0, loadGif.getIconWidth(),
+				loadGif.getIconHeight());
 		layeredPane.add(label, 1);
 		layeredPane.add(object, 0);
 		layeredPane.add(loadingObj, 0);

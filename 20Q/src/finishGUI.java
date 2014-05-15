@@ -10,10 +10,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.Random;
 
 @SuppressWarnings("serial")
 public class finishGUI extends JFrame {
 	private JPanel contentPane;
+	private Random ran = new Random();
+	int x, y;
 	
 	/**
 	 * Create the frame.
@@ -45,7 +50,7 @@ public class finishGUI extends JFrame {
 		openingLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		openingLbl.setBounds(10, 36, 358, 14);
 		contentPane.add(openingLbl);
-		JPanel panel = new JPanel();
+		final JPanel panel = new JPanel();
 		panel.setBounds(10, 86, 358, 166);
 		contentPane.add(panel);
 		panel.setLayout(null);
@@ -68,7 +73,17 @@ public class finishGUI extends JFrame {
 		});
 		yesBtn.setBounds(85, 71, 89, 23);
 		panel.add(yesBtn);
-		JButton noBtn = new JButton("No");
+		final JButton noBtn = new JButton("No");
+		noBtn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				x = ran.nextInt(panel.getWidth() - noBtn.getWidth());
+				y = ran.nextInt(panel.getHeight() - noBtn.getHeight());
+				noBtn.setBounds(x, y, noBtn.getWidth(), noBtn.getHeight());
+				revalidate();
+				repaint();
+			}
+		});
 		noBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
