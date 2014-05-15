@@ -15,6 +15,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class questionTree {
 	public static questionNode head;
 	private Scanner fReader;
+	private Scanner checkReader;
 	private static PrintWriter fWriter;
 	private static File file;
 	private static URL url;
@@ -25,10 +26,13 @@ public class questionTree {
 			file = new File("bigquestion.q20");
 		try {
 			fReader = new Scanner(file);
-			head = create(null, head);
+			checkReader = new Scanner(file);
+			checkAndCreate(head);
 			fReader.close();
 		}
 		catch(FileNotFoundException e) {
+			checkReader.close();
+			fReader.close();
 			JOptionPane
 					.showMessageDialog(
 							null,
@@ -67,8 +71,54 @@ public class questionTree {
 	public questionTree(InputStream openStream) {
 		file = null;
 		fReader = new Scanner(openStream);
-		head = create(null, head);
+		checkReader = new Scanner(openStream);
+		create(null, head);
 		fReader.close();
+	}
+	
+	private void checkAndCreate(questionNode head) {
+		if(checkReader.hasNextLine()) {
+			String firstLine = checkReader.nextLine();
+			if(firstLine.equals("Q:") || firstLine.equals("A:")) {
+				checkReader.close();
+				create(null, head);
+				return;
+			}
+		}
+		checkReader.close();
+		fReader.close();
+		JOptionPane
+				.showMessageDialog(
+						null,
+						"File is invalid. \nFind a valid .q20 file or a compatible text file.\nIf you can't find one, a read-only copy will be fetched from the internet.",
+						"Error", JOptionPane.ERROR_MESSAGE);
+		JFileChooser fc = new JFileChooser();
+		fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		fc.setCurrentDirectory(new File(System.getProperty("user.dir")));
+		fc.setFileFilter(new FileNameExtensionFilter("20 Questions Files",
+				"q20", "txt"));
+		fc.setAcceptAllFileFilterUsed(false);
+		int returnVal = fc.showOpenDialog(null);
+		if(returnVal == JFileChooser.CANCEL_OPTION) {
+			try {
+				url = new URL(
+						"https://docs.google.com/uc?authuser=0&id=0ByEZo2nCK6IySVdFb3FWODUxRW8&export=download");
+				new questionTree(url.openStream());
+			}
+			catch(MalformedURLException e1) {
+				JOptionPane.showMessageDialog(null,
+						"URL didn't work. ¯\\_(ツ)_/¯", "Error",
+						JOptionPane.ERROR_MESSAGE);
+				System.exit(0);
+			}
+			catch(IOException e1) {
+				JOptionPane.showMessageDialog(null, "I/O Exception.",
+						"Error", JOptionPane.ERROR_MESSAGE);
+				System.exit(0);
+			}
+		}
+		if(returnVal == JFileChooser.APPROVE_OPTION)
+			new questionTree(fc.getSelectedFile());
 	}
 	
 	private questionNode create(questionNode previous, questionNode current) {
