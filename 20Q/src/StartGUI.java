@@ -2,6 +2,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import javax.swing.SwingConstants;
@@ -18,7 +19,7 @@ import java.util.Random;
 public class StartGUI extends JFrame {
 	private JPanel contentPane;
 	private Random ran = new Random();
-	int x, y, z = 0;
+	int x, y;
 	
 	/**
 	 * Create the frame.
@@ -61,23 +62,7 @@ public class StartGUI extends JFrame {
 				getHeight() - 65 - labelPan.getHeight());
 		contentPane.add(btnPan);
 		btnPan.setLayout(null);
-		final JButton startBtn = new JButton("Start");
-		startBtn.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				if(z < 10) {
-					z++;
-					x = ran.nextInt(btnPan.getWidth()
-							- startBtn.getWidth());
-					y = ran.nextInt(btnPan.getHeight()
-							- startBtn.getHeight());
-					startBtn.setBounds(x, y, startBtn.getWidth(),
-							startBtn.getHeight());
-					revalidate();
-					repaint();
-				}
-			}
-		});
+		final JButton startBtn = new JButton("Ready");
 		startBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -101,13 +86,29 @@ public class StartGUI extends JFrame {
 		final JButton exitBtn = new JButton("Exit");
 		exitBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
+				exitBtn.setText("Nice try");
+				x = ran.nextInt(btnPan.getWidth() - exitBtn.getWidth());
+				y = ran.nextInt(btnPan.getHeight() - exitBtn.getHeight());
+				exitBtn.setBounds(x, y, exitBtn.getWidth(),
+						exitBtn.getHeight());
+				revalidate();
+				repaint();
 			}
 		});
 		exitBtn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				z++;
+				x = ran.nextInt(btnPan.getWidth() - exitBtn.getWidth());
+				y = ran.nextInt(btnPan.getHeight() - exitBtn.getHeight());
+				exitBtn.setBounds(x, y, exitBtn.getWidth(),
+						exitBtn.getHeight());
+				revalidate();
+				repaint();
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				exitBtn.setText("Nice try");
 				x = ran.nextInt(btnPan.getWidth() - exitBtn.getWidth());
 				y = ran.nextInt(btnPan.getHeight() - exitBtn.getHeight());
 				exitBtn.setBounds(x, y, exitBtn.getWidth(),
@@ -119,6 +120,7 @@ public class StartGUI extends JFrame {
 		exitBtn.setBounds((btnPan.getWidth() - 89) / 2,
 				btnPan.getHeight() / 2 + 3, 89, 23);
 		btnPan.add(exitBtn);
+		setMinimumSize(new Dimension(128, 200));
 		addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent e) {

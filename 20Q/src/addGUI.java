@@ -1,8 +1,6 @@
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import javax.swing.JLabel;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -16,11 +14,12 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 @SuppressWarnings("serial")
 public class addGUI extends JFrame {
 	private JPanel contentPane;
-	private String lastData;
 	private JLabel editLbl;
 	private static JTextField objectTxt;
 	private static JTextField questionTxt;
@@ -33,7 +32,6 @@ public class addGUI extends JFrame {
 	 */
 	public addGUI(final String lastData) {
 		answer = true;
-		this.lastData = lastData;
 		setTitle("20 Questions");
 		addWindowListener(new WindowAdapter() {
 			@Override
@@ -42,88 +40,45 @@ public class addGUI extends JFrame {
 			}
 		});
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		setResizable(false);
 		setBounds(0, 0, 384, 288);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		JLabel titleLbl = new JLabel("20 Questions:");
+		final JLabel titleLbl = new JLabel("20 Questions:");
 		titleLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		titleLbl.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		titleLbl.setBounds(10, 11, 358, 14);
 		contentPane.add(titleLbl);
-		JLabel awkLbl = new JLabel("Oh... awkward.");
+		final JLabel awkLbl = new JLabel("Oh... awkward.");
 		awkLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		awkLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		awkLbl.setBounds(10, 36, 358, 14);
 		contentPane.add(awkLbl);
-		JPanel panel = new JPanel();
-		panel.setBounds(10, 61, 358, 191);
+		final JPanel panel = new JPanel();
 		contentPane.add(panel);
 		panel.setLayout(null);
-		JLabel objectLbl = new JLabel("What was the object?");
+		final JLabel objectLbl = new JLabel("What was the object?");
 		objectLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		objectLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		objectLbl.setBounds(10, 11, 338, 14);
 		panel.add(objectLbl);
-		JLabel openingLbl = new JLabel(
+		final JLabel openingLbl = new JLabel(
 				"What is a question that would help me pick between ");
 		openingLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		openingLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		openingLbl.setBounds(10, 67, 338, 14);
 		panel.add(openingLbl);
 		editLbl = new JLabel("an ... and a " + lastData + "?");
 		editLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		editLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		editLbl.setBounds(10, 92, 338, 14);
 		panel.add(editLbl);
 		objectTxt = new JTextField();
-		objectTxt.getDocument().addDocumentListener(
-				new DocumentListener() {
-					@Override
-					public void insertUpdate(DocumentEvent e) {
-						textUpdate();
-					}
-					
-					@Override
-					public void removeUpdate(DocumentEvent e) {
-						textUpdate();
-					}
-					
-					@Override
-					public void changedUpdate(DocumentEvent e) {
-						textUpdate();
-					}
-				});
 		objectTxt.setHorizontalAlignment(SwingConstants.CENTER);
-		objectTxt.setBounds(0, 36, 358, 20);
 		panel.add(objectTxt);
 		objectTxt.setColumns(10);
 		questionTxt = new JTextField();
-		questionTxt.getDocument().addDocumentListener(
-				new DocumentListener() {
-					@Override
-					public void insertUpdate(DocumentEvent e) {
-						textUpdate();
-					}
-					
-					@Override
-					public void removeUpdate(DocumentEvent e) {
-						textUpdate();
-					}
-					
-					@Override
-					public void changedUpdate(DocumentEvent e) {
-						textUpdate();
-					}
-				});
 		questionTxt.setHorizontalAlignment(SwingConstants.CENTER);
-		questionTxt.setBounds(0, 117, 358, 20);
 		panel.add(questionTxt);
 		questionTxt.setColumns(10);
-		JButton finishBtn = new JButton("Next");
+		final JButton finishBtn = new JButton("Next");
 		finishBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(!(objectTxt.getText().length() > 0 && questionTxt
@@ -189,42 +144,51 @@ public class addGUI extends JFrame {
 		});
 		yesBtn.setSelected(true);
 		buttonGroup.add(yesBtn);
-		yesBtn.setBounds(159, 142, 45, 23);
 		panel.add(yesBtn);
-		JRadioButton noBtn = new JRadioButton("No");
+		final JRadioButton noBtn = new JRadioButton("No");
 		noBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				answer = false;
 			}
 		});
 		buttonGroup.add(noBtn);
-		noBtn.setBounds(206, 142, 45, 23);
 		panel.add(noBtn);
-		finishBtn.setBounds(269, 168, 89, 23);
 		panel.add(finishBtn);
-		JLabel ansLbl = new JLabel("Answer:");
+		final JLabel ansLbl = new JLabel("Answer:");
 		ansLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		ansLbl.setBounds(108, 145, 45, 14);
 		panel.add(ansLbl);
-	}
-	
-	boolean vowelCheck(char c) {
-		return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
-	}
-	
-	void textUpdate() {
-		if(objectTxt.getText().length() > 17) {
-			objectTxt.setText(objectTxt.getText().substring(0, 17));
-		}
-		if(questionTxt.getText().length() > 256) {
-			questionTxt.setText(questionTxt.getText().substring(0, 256));
-		}
-
-		String temp = objectTxt.getText();
-		char first = 0;
-		if(!temp.isEmpty())
-			first = temp.charAt(0);
-		editLbl.setText("a" + (vowelCheck(first) ? "n " : " ") + temp
-				+ " and a " + lastData + "?");
+		titleLbl.setBounds(10, 10, getWidth() - 36, 14);
+		awkLbl.setBounds(10, 34, getWidth() - 36, 14);
+		panel.setBounds(10, 58, getWidth() - 36, getHeight() - 94);
+		objectLbl.setBounds(10, 10, panel.getWidth() - 20, 14);
+		objectTxt.setBounds(0, 36, panel.getWidth(), 20);
+		openingLbl.setBounds(10, 67, panel.getWidth() - 20, 14);
+		editLbl.setBounds(10, 92, panel.getWidth() - 20, 14);
+		questionTxt.setBounds(0, 117, panel.getWidth(), 20);
+		ansLbl.setBounds((panel.getWidth() - 45) / 2 - 51, 145, 45, 14);
+		yesBtn.setBounds((panel.getWidth() - 45) / 2, 142, 45, 23);
+		noBtn.setBounds((panel.getWidth() + 45) / 2 + 2, 142, 45, 23);
+		finishBtn.setBounds(panel.getWidth() - 89, panel.getHeight() - 23,
+				89, 23);
+		addComponentListener(new ComponentAdapter() {
+			@Override
+			public void componentResized(ComponentEvent e) {
+				titleLbl.setBounds(10, 10, getWidth() - 36, 14);
+				awkLbl.setBounds(10, 34, getWidth() - 36, 14);
+				panel.setBounds(10, 58, getWidth() - 36, getHeight() - 94);
+				objectLbl.setBounds(10, 10, panel.getWidth() - 20, 14);
+				objectTxt.setBounds(0, 36, panel.getWidth(), 20);
+				openingLbl.setBounds(10, 67, panel.getWidth() - 20, 14);
+				editLbl.setBounds(10, 92, panel.getWidth() - 20, 14);
+				questionTxt.setBounds(0, 117, panel.getWidth(), 20);
+				ansLbl.setBounds((panel.getWidth() - 45) / 2 - 51, 145,
+						45, 14);
+				yesBtn.setBounds((panel.getWidth() - 45) / 2, 142, 45, 23);
+				noBtn.setBounds((panel.getWidth() + 45) / 2 + 2, 142, 45,
+						23);
+				finishBtn.setBounds(panel.getWidth() - 89,
+						panel.getHeight() - 23, 89, 23);
+			}
+		});
 	}
 }

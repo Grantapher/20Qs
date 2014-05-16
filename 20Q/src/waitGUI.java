@@ -21,6 +21,7 @@ public class waitGUI extends JFrame {
 	private JLayeredPane layeredPane;
 	private JLabel object;
 	public String str;
+	int[] pixels;
 	
 	/**
 	 * Create the frame.
@@ -75,20 +76,20 @@ public class waitGUI extends JFrame {
 		loadingObj.setHorizontalAlignment(SwingConstants.CENTER);
 		loadingObj.setVerticalAlignment(SwingConstants.CENTER);
 		loadingObj.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		loadingObj.setForeground(Color.WHITE);
+		loadingObj.setForeground(Color.BLACK);
 		loadingObj.setBounds(0, 28, loadGif.getIconWidth(),
 				loadGif.getIconHeight() - 28);
 		object = new JLabel("Loading objects...");
 		object.setHorizontalAlignment(SwingConstants.CENTER);
 		object.setVerticalAlignment(SwingConstants.CENTER);
 		object.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		object.setForeground(Color.WHITE);
+		object.setForeground(Color.BLACK);
 		object.setBounds(0, 0, loadGif.getIconWidth(),
 				loadGif.getIconHeight() - 28);
 		JLabel label = new JLabel(loadGif);
 		label.setBounds(0, 0, loadGif.getIconWidth(),
 				loadGif.getIconHeight());
-		layeredPane.add(label, 1);
+		layeredPane.add(label, 2);
 		layeredPane.add(object, 0);
 		layeredPane.add(loadingObj, 0);
 		contentPane.add(layeredPane);

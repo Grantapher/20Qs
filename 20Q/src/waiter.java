@@ -40,9 +40,4 @@ public class waiter {
 			}
 		}
 	};
-	public static Runnable paint = new Runnable() {
-		public void run() {
-			waitFrame.repaint();
-		}
-	};
 }
