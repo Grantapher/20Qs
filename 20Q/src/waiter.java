@@ -1,22 +1,25 @@
 import java.awt.EventQueue;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class waiter {
 	protected static double secs;
-	public static waitGUI waitFrame = new waitGUI();
-	private static final class Lock {}
-	final static Object hold = new Lock();
+	public static waitGUI waitFrame;
 	
 	public static void Wait(final double secs) {
 		waiter.secs = secs;
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					waitFrame = new waitGUI();
 					waitFrame.setVisible(true);
 					new Thread(wait).start();
 				}
 				catch(Exception e) {
-					e.printStackTrace();
+					JOptionPane.showMessageDialog(null,
+							"Check your internet connection.",
+							"No Connection", JOptionPane.WARNING_MESSAGE);
+					new StartGUI().setVisible(true);
 				}
 			}
 		});

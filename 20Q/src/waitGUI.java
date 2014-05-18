@@ -27,11 +27,12 @@ public class waitGUI extends JFrame {
 	 * Create the frame.
 	 * 
 	 * @param secs
+	 * @throws Exception 
 	 */
-	public waitGUI() {
+	public waitGUI() throws Exception {
 		setResizable(false);
 		ImageIcon loadGif = null;
-		File load = new File("load.gif");
+		File load = new File("");
 		if(!load.exists()) {
 			JOptionPane
 					.showMessageDialog(
@@ -48,11 +49,13 @@ public class waitGUI extends JFrame {
 				try {
 					URL loadURL = new URL("http://i.imgur.com/dZgTHsw.gif");
 					loadGif = new ImageIcon(loadURL);
+					setBounds(0, 0, loadGif.getIconWidth() + 6,
+							loadGif.getIconHeight() + 25);
+					if(loadGif.getIconHeight() == -1
+							&& loadGif.getIconWidth() == -1)
+						throw new Exception();
 				}
-				catch(MalformedURLException e) {
-					object.setForeground(Color.BLACK);
-					loadingObj.setForeground(Color.BLACK);
-				}
+				catch(MalformedURLException e) {}
 			}
 			if(returnVal == JFileChooser.APPROVE_OPTION) {
 				loadGif = new ImageIcon(fc.getSelectedFile().getPath());
@@ -65,8 +68,9 @@ public class waitGUI extends JFrame {
 				loadGif.getIconHeight());
 		setTitle("20 Questions");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, loadGif.getIconWidth() + 6,
-				loadGif.getIconHeight() + 25);
+		if(load.exists())
+			setBounds(0, 0, loadGif.getIconWidth() + 6,
+					loadGif.getIconHeight() + 25);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -77,19 +81,19 @@ public class waitGUI extends JFrame {
 		loadingObj.setVerticalAlignment(SwingConstants.CENTER);
 		loadingObj.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		loadingObj.setForeground(Color.BLACK);
-		loadingObj.setBounds(0, 28, loadGif.getIconWidth(),
-				loadGif.getIconHeight() - 28);
+		loadingObj.setBounds(0, 28, getWidth(), getHeight() - 28);
 		object = new JLabel("Loading objects...");
 		object.setHorizontalAlignment(SwingConstants.CENTER);
 		object.setVerticalAlignment(SwingConstants.CENTER);
 		object.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		object.setForeground(Color.BLACK);
-		object.setBounds(0, 0, loadGif.getIconWidth(),
-				loadGif.getIconHeight() - 28);
-		JLabel label = new JLabel(loadGif);
-		label.setBounds(0, 0, loadGif.getIconWidth(),
-				loadGif.getIconHeight());
-		layeredPane.add(label, 2);
+		object.setBounds(0, 0, getWidth(), getHeight() - 28);
+		if(loadGif.getIconHeight() != -1) {
+			JLabel label = new JLabel(loadGif);
+			label.setBounds(0, 0, loadGif.getIconWidth(),
+					loadGif.getIconHeight());
+			layeredPane.add(label, 2);
+		}
 		layeredPane.add(object, 0);
 		layeredPane.add(loadingObj, 0);
 		contentPane.add(layeredPane);

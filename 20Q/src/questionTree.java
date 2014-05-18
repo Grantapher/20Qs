@@ -23,7 +23,7 @@ public class questionTree {
 	questionTree(File fileIn) {
 		file = fileIn;
 		if(file == null)
-			file = new File("src/bigquestion.q20");
+			file = new File("bigquestion.q20");
 		try {
 			fReader = new Scanner(file);
 			checkReader = new Scanner(file);
@@ -60,8 +60,11 @@ public class questionTree {
 					System.exit(0);
 				}
 				catch(IOException e1) {
-					JOptionPane.showMessageDialog(null, "I/O Exception.",
-							"Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane
+							.showMessageDialog(
+									null,
+									"I/O Exception. Check your internet connection.",
+									"Error", JOptionPane.ERROR_MESSAGE);
 					System.exit(0);
 				}
 			}
