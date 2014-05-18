@@ -3,6 +3,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import javax.swing.SwingConstants;
@@ -35,6 +36,7 @@ public class QuestionGUI extends JFrame {
 		});
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(0, 0, 384, 288);
+		setMinimumSize(new Dimension(223, 210));
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

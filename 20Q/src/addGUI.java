@@ -2,6 +2,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import javax.swing.JOptionPane;
@@ -41,6 +42,7 @@ public class addGUI extends JFrame {
 		});
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(0, 0, 384, 288);
+		setMinimumSize(new Dimension(166, 286));
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -142,6 +144,9 @@ public class addGUI extends JFrame {
 				answer = true;
 			}
 		});
+		final JLabel ansLbl = new JLabel("Answer:");
+		ansLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		panel.add(ansLbl);
 		yesBtn.setSelected(true);
 		buttonGroup.add(yesBtn);
 		panel.add(yesBtn);
@@ -154,20 +159,19 @@ public class addGUI extends JFrame {
 		buttonGroup.add(noBtn);
 		panel.add(noBtn);
 		panel.add(finishBtn);
-		final JLabel ansLbl = new JLabel("Answer:");
-		ansLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		panel.add(ansLbl);
 		titleLbl.setBounds(10, 10, getWidth() - 36, 14);
 		awkLbl.setBounds(10, 34, getWidth() - 36, 14);
-		panel.setBounds(10, 58, getWidth() - 36, getHeight() - 94);
+		panel.setBounds(10, 48, getWidth() - 36, getHeight() - 96);
 		objectLbl.setBounds(10, 10, panel.getWidth() - 20, 14);
 		objectTxt.setBounds(0, 36, panel.getWidth(), 20);
 		openingLbl.setBounds(10, 67, panel.getWidth() - 20, 14);
 		editLbl.setBounds(10, 92, panel.getWidth() - 20, 14);
 		questionTxt.setBounds(0, 117, panel.getWidth(), 20);
-		ansLbl.setBounds((panel.getWidth() - 45) / 2 - 51, 145, 45, 14);
-		yesBtn.setBounds((panel.getWidth() - 45) / 2, 142, 45, 23);
-		noBtn.setBounds((panel.getWidth() + 45) / 2 + 2, 142, 45, 23);
+		ansLbl.setBounds((panel.getWidth() - 131) / 2, 145, 45, 14);
+		yesBtn.setBounds(ansLbl.getX() + ansLbl.getWidth() + 6,
+				ansLbl.getY(), 42, 14);
+		noBtn.setBounds(yesBtn.getX() + yesBtn.getWidth(), ansLbl.getY(),
+				38, 14);
 		finishBtn.setBounds(panel.getWidth() - 89, panel.getHeight() - 23,
 				89, 23);
 		addComponentListener(new ComponentAdapter() {
@@ -175,17 +179,17 @@ public class addGUI extends JFrame {
 			public void componentResized(ComponentEvent e) {
 				titleLbl.setBounds(10, 10, getWidth() - 36, 14);
 				awkLbl.setBounds(10, 34, getWidth() - 36, 14);
-				panel.setBounds(10, 58, getWidth() - 36, getHeight() - 94);
+				panel.setBounds(10, 48, getWidth() - 36, getHeight() - 94);
 				objectLbl.setBounds(10, 10, panel.getWidth() - 20, 14);
 				objectTxt.setBounds(0, 36, panel.getWidth(), 20);
 				openingLbl.setBounds(10, 67, panel.getWidth() - 20, 14);
 				editLbl.setBounds(10, 92, panel.getWidth() - 20, 14);
 				questionTxt.setBounds(0, 117, panel.getWidth(), 20);
-				ansLbl.setBounds((panel.getWidth() - 45) / 2 - 51, 145,
-						45, 14);
-				yesBtn.setBounds((panel.getWidth() - 45) / 2, 142, 45, 23);
-				noBtn.setBounds((panel.getWidth() + 45) / 2 + 2, 142, 45,
-						23);
+				ansLbl.setBounds((panel.getWidth() - 131) / 2, 145, 45, 14);
+				yesBtn.setBounds(ansLbl.getX() + ansLbl.getWidth() + 6,
+						ansLbl.getY(), 42, 14);
+				noBtn.setBounds(yesBtn.getX() + yesBtn.getWidth(),
+						ansLbl.getY(), 38, 14);
 				finishBtn.setBounds(panel.getWidth() - 89,
 						panel.getHeight() - 23, 89, 23);
 			}
