@@ -13,6 +13,8 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.swing.SwingConstants;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 @SuppressWarnings("serial")
 public class waitGUI extends JFrame {
@@ -20,16 +22,22 @@ public class waitGUI extends JFrame {
 	public JLabel loadingObj;
 	private JLayeredPane layeredPane;
 	private JLabel object;
-	public String str;
-	int[] pixels;
+	char c;
 	
 	/**
 	 * Create the frame.
 	 * 
 	 * @param secs
-	 * @throws Exception 
+	 * @throws Exception
 	 */
-	public waitGUI() throws Exception {
+	public waitGUI() throws LoadFailException {
+		addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				if(' ' == e.getKeyChar())
+					waiter.startNext();
+			}
+		});
 		setResizable(false);
 		ImageIcon loadGif = null;
 		File load = new File("");
@@ -37,7 +45,7 @@ public class waitGUI extends JFrame {
 			JOptionPane
 					.showMessageDialog(
 							null,
-							"File not found. ¯\\_(ツ)_/¯\nFind load.gif.\nIf you can't find it, it will be fetched from the internet.",
+							"File not found. ¯\\_(ツ)_/¯\nFind the loading image.\nIf you can't find it, one will be fetched from the internet.",
 							"Error", JOptionPane.ERROR_MESSAGE);
 			JFileChooser fc = new JFileChooser();
 			fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -51,9 +59,6 @@ public class waitGUI extends JFrame {
 					loadGif = new ImageIcon(loadURL);
 					setBounds(0, 0, loadGif.getIconWidth() + 6,
 							loadGif.getIconHeight() + 25);
-					if(loadGif.getIconHeight() == -1
-							&& loadGif.getIconWidth() == -1)
-						throw new Exception();
 				}
 				catch(MalformedURLException e) {}
 			}
@@ -68,9 +73,10 @@ public class waitGUI extends JFrame {
 				loadGif.getIconHeight());
 		setTitle("20 Questions");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		if(load.exists())
-			setBounds(0, 0, loadGif.getIconWidth() + 6,
-					loadGif.getIconHeight() + 25);
+		if(loadGif.getIconHeight() == -1 || loadGif.getIconWidth() == -1)
+			throw new LoadFailException();
+		setBounds(0, 0, loadGif.getIconWidth() + 6,
+				loadGif.getIconHeight() + 25);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
