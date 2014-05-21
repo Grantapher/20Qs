@@ -83,7 +83,7 @@ public class addGUI extends JFrame {
 		final JButton finishBtn = new JButton("Next");
 		finishBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(!(objectTxt.getText().length() > 0 && questionTxt
+				if(!(objectTxt.getText().length() > 0 && questionTxt	//if a field is blank, don't add a Q&A if user doesn't want to
 						.getText().length() > 0)) {
 					if(JOptionPane
 							.showConfirmDialog(
@@ -108,7 +108,7 @@ public class addGUI extends JFrame {
 					setVisible(false);
 					return;
 				}
-				if(JOptionPane
+				if(JOptionPane		//confirms they are adding a compatible Q&A to the game
 						.showConfirmDialog(getContentPane(),
 								"If you answer yes to the question: \""
 										+ questionTxt.getText()
@@ -120,11 +120,11 @@ public class addGUI extends JFrame {
 								JOptionPane.QUESTION_MESSAGE) != JOptionPane.YES_OPTION)
 					return;
 				yesBtn.setEnabled(false);
-				questionTree.add(objectTxt.getText(),
+				questionTree.add(objectTxt.getText(),	//adds Q&A to the tree
 						questionTxt.getText(), answer);
 				questionTree.write();
 				setVisible(false);
-				EventQueue.invokeLater(new Runnable() {
+				EventQueue.invokeLater(new Runnable() {	
 					public void run() {
 						try {
 							finishGUI frame = new finishGUI(false);
@@ -140,7 +140,7 @@ public class addGUI extends JFrame {
 		getRootPane().setDefaultButton(finishBtn);
 		yesBtn = new JRadioButton("Yes");
 		yesBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {	
 				answer = true;
 			}
 		});

@@ -24,7 +24,7 @@ public class StartGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public StartGUI() {
+	public StartGUI() {		//StartGUI is just a welcome screen for the game
 		setTitle("20 Questions");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 384, 288);
@@ -64,7 +64,7 @@ public class StartGUI extends JFrame {
 		btnPan.setLayout(null);
 		final JButton startBtn = new JButton("Ready");
 		startBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {	//ready button sends you on to the questionGUI
 				setVisible(false);
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
@@ -85,7 +85,7 @@ public class StartGUI extends JFrame {
 		btnPan.add(startBtn);
 		final JButton exitBtn = new JButton("Exit");
 		exitBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {	//renames Exit button and moves it
 				exitBtn.setText("Nice try");
 				x = ran.nextInt(btnPan.getWidth() - exitBtn.getWidth());
 				y = ran.nextInt(btnPan.getHeight() - exitBtn.getHeight());
@@ -97,7 +97,7 @@ public class StartGUI extends JFrame {
 		});
 		exitBtn.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseEntered(MouseEvent e) {
+			public void mouseEntered(MouseEvent e) {	//makes Exit button move
 				x = ran.nextInt(btnPan.getWidth() - exitBtn.getWidth());
 				y = ran.nextInt(btnPan.getHeight() - exitBtn.getHeight());
 				exitBtn.setBounds(x, y, exitBtn.getWidth(),
@@ -107,7 +107,7 @@ public class StartGUI extends JFrame {
 			}
 			
 			@Override
-			public void mousePressed(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {	//renames Exit button and moves it
 				exitBtn.setText("Nice try");
 				x = ran.nextInt(btnPan.getWidth() - exitBtn.getWidth());
 				y = ran.nextInt(btnPan.getHeight() - exitBtn.getHeight());

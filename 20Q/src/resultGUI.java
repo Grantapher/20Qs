@@ -21,7 +21,7 @@ public class resultGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 * 
-	 * @param current
+	 * @param current is a questionNode so that the undo button has a path to the last question
 	 */
 	public resultGUI(final questionNode current) {
 		setTitle("20 Questions");
@@ -59,17 +59,17 @@ public class resultGUI extends JFrame {
 		yesBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							finishGUI frame = new finishGUI(true);
-							frame.setVisible(true);
-						}
-						catch(Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				EventQueue.invokeLater(new Runnable() {		//yes button advances to the finishGUI
+							public void run() {
+								try {
+									finishGUI frame = new finishGUI(true);
+									frame.setVisible(true);
+								}
+								catch(Exception e) {
+									e.printStackTrace();
+								}
+							}
+						});
 			}
 		});
 		panel.add(yesBtn);
@@ -77,17 +77,17 @@ public class resultGUI extends JFrame {
 		noBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							addGUI frame = new addGUI(current.data);
-							frame.setVisible(true);
-						}
-						catch(Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				EventQueue.invokeLater(new Runnable() {		//No button advances to the addGUI
+							public void run() {
+								try {
+									addGUI frame = new addGUI(current.data);
+									frame.setVisible(true);
+								}
+								catch(Exception e) {
+									e.printStackTrace();
+								}
+							}
+						});
 			}
 		});
 		panel.add(noBtn);
@@ -95,18 +95,18 @@ public class resultGUI extends JFrame {
 		undoBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							QuestionGUI frame = new QuestionGUI(
-									current.undo);
-							frame.setVisible(true);
-						}
-						catch(Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				EventQueue.invokeLater(new Runnable() {			//undo button retreats back to the last question in a new questionGUI
+							public void run() {
+								try {
+									QuestionGUI frame = new QuestionGUI(
+											current.undo);
+									frame.setVisible(true);
+								}
+								catch(Exception e) {
+									e.printStackTrace();
+								}
+							}
+						});
 			}
 		});
 		panel.add(undoBtn);

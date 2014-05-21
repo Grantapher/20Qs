@@ -70,7 +70,7 @@ public class QuestionGUI extends JFrame {
 		btnPan.setLayout(null);
 		final JButton yesBtn = new JButton("Yes");
 		yesBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {	//if the yes button is hit, advance the node the yes side
 				current = current.yes;
 				questionCheck();
 			}
@@ -79,7 +79,7 @@ public class QuestionGUI extends JFrame {
 		btnPan.add(yesBtn);
 		final JButton noBtn = new JButton("No");
 		noBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {	//if the no button is hit, advance the node the no side
 				current = current.no;
 				questionCheck();
 			}
@@ -96,7 +96,7 @@ public class QuestionGUI extends JFrame {
 		btnPan.add(exitBtn);
 		final JButton undoButton = new JButton("Undo");
 		undoButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {	//the undo button will retreat the current node if it's not the head
 				if(current.undo == null)
 					return;
 				current = current.undo;
@@ -148,14 +148,14 @@ public class QuestionGUI extends JFrame {
 		});
 	}
 	
-	protected void questionCheck() {
+	protected void questionCheck() {	//sets text if question or moves to resultGUI if it's an answer
 		if(current.isQuestion())
 			questionTxt.setText(current.data);
 		else
 			moveOn();
 	}
 	
-	void moveOn() {
+	void moveOn() {						//opens a resultGUI
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

@@ -25,6 +25,9 @@ public class finishGUI extends JFrame {
 	
 	/**
 	 * Create the frame.
+	 * 
+	 * @param correct changes text based on if the game got the answer correct.
+	 * 
 	 */
 	public finishGUI(boolean correct) {
 		setTitle("20 Questions");
@@ -62,7 +65,7 @@ public class finishGUI extends JFrame {
 		contentPane.add(pan);
 		pan.setLayout(null);
 		final JButton yesBtn = new JButton("Yes");
-		yesBtn.addActionListener(new ActionListener() {
+		yesBtn.addActionListener(new ActionListener() {		//yes button brings the game back to the startGUI
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
 				EventQueue.invokeLater(new Runnable() {
@@ -82,7 +85,7 @@ public class finishGUI extends JFrame {
 				(pan.getHeight() - 23) / 2, 89, 23);
 		pan.add(yesBtn);
 		final JButton noBtn = new JButton("No");
-		noBtn.addActionListener(new ActionListener() {
+		noBtn.addActionListener(new ActionListener() {		//no button is the same as the Exit button in StartGUI
 			public void actionPerformed(ActionEvent e) {
 				noBtn.setText("Nice try");
 				x = ran.nextInt(pan.getWidth() - noBtn.getWidth());
