@@ -1,3 +1,23 @@
+/**
+ * 	@author Grant Toepfer, Will Smith, Cameron Heil
+ * 
+ * 	@description 
+ * 	This program plays 20 questions with the user.
+ * 	The user must think of an object/thing and the program
+ * 	will ask a question about the object/thing the user is 
+ * 	thinking of. the user will then have the option to answer
+ * 	yes or no. After the user answers, the program will ask another
+ * 	question and will eventually make a guess at qhat the object/thing
+ * 	is. If the item is guessed correctly, the user will have the option
+ * 	of playing again. If the question is guessed incorrectly, the program
+ * 	will ask the user to enter the object/thing into a field and to enter
+ * 	a question that will lead to that object, thus building a database
+ * 	of questions and answers.
+ * 	
+ *  @class CSE 223
+ *  @assignment HW3
+ *  @date 5/21/2014
+ */
 import java.awt.Container;
 import java.awt.EventQueue;
 import java.io.File;
